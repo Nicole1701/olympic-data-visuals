@@ -3,7 +3,6 @@ var myMap = L.map("map", {
     center: [40.7128, 0],
     zoom: 2
 });
-
 // Adding tile layer
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -15,7 +14,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 // Use this link to get the geojson data.
-var link = "countries.geojson";
+var link = "../data/countries.geojson";
 
 // Function that will determine the color of a country based on the medals count? it belongs to
 function chooseColor(ADMIN) {
