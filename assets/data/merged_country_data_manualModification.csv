@@ -1,4 +1,4 @@
-NOC,country,country_code,latitude,longitude,
+NOC,country,country_code,latitude,longitude,other_alias
 AFG,Afghanistan,AF,33.93911,67.709953,
 AHO,Curacao,AN,12.226079,-69.060087,Netherlands Antilles
 ALB,Albania,AL,41.153332,20.168331,
@@ -141,7 +141,7 @@ MOZ,Mozambique,MZ,-18.665695,35.529562,
 MRI,Mauritius,MU,-20.348404,57.552152,
 MTN,Mauritania,MR,21.00789,-10.940835,
 MYA,Myanmar,MM,21.913965,95.956223,Myanmar [Burma]
-NAM,Namibia,,-22.95764,18.49041,
+NAM,Namibia,NA,-22.95764,18.49041,
 NBO,Malaysia,MY,4.210484,101.975766,
 NCA,Nicaragua,NI,12.865416,-85.207229,
 NED,Netherlands,NL,52.132633,5.291266,
