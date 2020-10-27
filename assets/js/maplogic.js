@@ -19,20 +19,22 @@ var link = "../data/countries.geojson";
 // Function that will determine the color of a country based on the medals count? it belongs to
 function chooseColor(ADMIN) {
     switch (ADMIN) {
-        case "Aruba":
-            return "yellow";
+        case "United Kingdom":
+            return "blue";
         case "Algeria":
-            return "yellow";
+            return "#F4C300";
         case "China":
             return "red";
         case "Russia":
-            return "red";
+            return "#DF0024";
         case "United States of America":
-            return "blue";
+            return "#0085C7";
+        case "Spain":
+            return "red";
         case "France":
             return "yellow";
         case "Brazil":
-            return "green";
+            return "#009F3D";
         case "Japan":
             return "purple";
         default:
@@ -57,7 +59,7 @@ d3.json(link).then(data => {
                 color: "black",
                 // Call the chooseColor function to decide which color to color our country (color based on goals?)
                 fillColor: chooseColor(feature.properties.ADMIN),
-                fillOpacity: 0.1,
+                fillOpacity: 0.3,
                 weight: 0.5
             };
         },
@@ -69,14 +71,18 @@ d3.json(link).then(data => {
                 mouseover: function(event) {
                     layer = event.target;
                     layer.setStyle({
-                        fillOpacity: 0.85
+                        fillOpacity: .9,
+                        weight: 1,
+                        color: "white"
                     });
                 },
                 // When the cursor no longer hovers over a map feature - when the mouseout event occurs - the feature's opacity reverts back to 50%
                 mouseout: function(event) {
                     layer = event.target;
                     layer.setStyle({
-                        fillOpacity: 0.1
+                        fillOpacity: 0.3,
+                        weight: 0.5,
+                        color: "black"
                     });
                 },
                 // When a feature (country) is clicked, it is enlarged to fit the screen
@@ -85,7 +91,7 @@ d3.json(link).then(data => {
                 }
             });
             // Giving each feature a pop-up with information pertinent to it
-            layer.bindPopup("<h1>" + feature.properties.ADMIN + "</h1> <hr> <h2>" + "Medal Count and Stuff" + "</h2>");
+            layer.bindPopup("<h3>" + feature.properties.ADMIN + "</h3> <hr> <h4>" + "Athena Rating & Medal Count and Stuff" + "</h4>");
 
         }
     }).addTo(myMap);
