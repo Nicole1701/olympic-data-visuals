@@ -91,7 +91,7 @@ d3.json(link).then(data => {
                 }
             });
             // Giving each feature a pop-up with information pertinent to it
-            layer.bindPopup("<h1>" + feature.properties.ADMIN + "</h1> <hr> <h2>" + "Medal Count and Stuff" + "</h2>");
+            layer.bindPopup("<h3>" + feature.properties.ADMIN + "</h3> <hr> <h4>" + "Athena Rating & Medal Count and Stuff" + "</h4>");
 
         }
     }).addTo(myMap);
