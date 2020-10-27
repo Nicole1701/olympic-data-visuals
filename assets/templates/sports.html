@@ -25,6 +25,12 @@
   <!-- Template Main CSS File -->
   <link href="../css/style.css" rel="stylesheet">
 
+  <!-- Highcharts -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
   <!-- =======================================================
   * Template Name: Lumia - v2.1.0
   * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
@@ -86,11 +92,10 @@
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
-      <div class="container">
-        <p>
-          Example inner page template
-        </p>
-      </div>
+      <figure class="highcharts-figure">
+        <div id="sports-container"></div>
+      </figure>
+
     </section>
 
   </main><!-- End #main -->
@@ -138,6 +143,7 @@
 
   <!-- Template Main JS File -->
   <script src="../js/main.js"></script>
+  <script src="../js/sports.js"></script>
 
 </body>
 
