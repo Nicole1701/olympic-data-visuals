@@ -25,6 +25,11 @@
   <!-- Template Main CSS File -->
   <link href="../css/style.css" rel="stylesheet">
 
+  <!-- highcharts bar comparison -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
 
 
   <!-- =======================================================
@@ -96,12 +101,36 @@
     </section>
     <!-- map -->
     <section id = "map" class="map">
-      <div id="container" style="width:100%%; height:400px;">
+      <div id="mapcontainer" style="width:100%%; height:400px;">
       {% comment %} <div class="container"> {% endcomment %}
         <script src="../js/maplogic.js"></script>
       </div>
     </section>
       <!-- End map -->
+      <!-- medal highchart -->
+    <section id = "medalbar" class ="chart" class='buttons'>
+    <div id = "container">
+      <div><script src="../js/medalbar.js"></script></div>
+      <button id='2000'>
+        2000
+      </button>
+      <button id='2004'>
+        2004
+      </button>
+      <button id='2008'>
+        2008
+      </button>
+      <button id='2012'>
+        2012
+      </button>
+      <button id='2016' class='active'>
+        2016
+      </button>
+      
+      
+
+    
+    </div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
