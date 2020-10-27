@@ -63,3 +63,23 @@ ad.sport
 from athlete_data ad
 group by ad.sport, ad.sex, ad.year
 order by ad.year desc;
+
+/*Olympics # of Sport, per Season*/
+SELECT year, season, COUNT(DISTINCT sport)
+FROM athlete_data
+GROUP BY year, season
+ORDER BY year;
+
+/*Olympics # of Sport, per Season, Summer only*/
+SELECT year, COUNT(DISTINCT sport)
+FROM athlete_data
+WHERE season = 'Summer'
+GROUP BY year
+ORDER BY year;
+
+/*Olympics # of Sport, per Season, Winter only*/
+SELECT year, COUNT(DISTINCT sport)
+FROM athlete_data
+WHERE season = 'Winter'
+GROUP BY year
+ORDER BY year;
