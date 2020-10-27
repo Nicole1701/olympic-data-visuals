@@ -20,23 +20,27 @@ var link = "../data/countries.geojson";
 function chooseColor(ADMIN) {
     switch (ADMIN) {
         case "United Kingdom":
-            return "blue";
+            return "#0085C7";
         case "Algeria":
             return "#F4C300";
         case "China":
-            return "red";
+            return "#DF0024";
         case "Russia":
             return "#DF0024";
         case "United States of America":
             return "#0085C7";
         case "Spain":
-            return "red";
+            return "#DF0024";
         case "France":
-            return "yellow";
+            return "#F4C300";
         case "Brazil":
             return "#009F3D";
         case "Japan":
-            return "purple";
+            return "black";
+        case "Germany":
+            return "black";
+        case "India":
+            return "#F4C300";
         default:
             return "#d3ffff";
     }
@@ -59,7 +63,7 @@ d3.json(link).then(data => {
                 color: "black",
                 // Call the chooseColor function to decide which color to color our country (color based on goals?)
                 fillColor: chooseColor(feature.properties.ADMIN),
-                fillOpacity: 0.3,
+                fillOpacity: 0.5,
                 weight: 0.5
             };
         },
@@ -80,7 +84,7 @@ d3.json(link).then(data => {
                 mouseout: function(event) {
                     layer = event.target;
                     layer.setStyle({
-                        fillOpacity: 0.3,
+                        fillOpacity: 0.5,
                         weight: 0.5,
                         color: "black"
                     });

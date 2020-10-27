@@ -127,7 +127,7 @@ var countries = [{
 }, {
     name: 'China',
     flag: 197375,
-    color: 'rgb(255, 217, 68)'
+    color: "#DF0024"
 }, {
     name: 'Great Britain',
     flag: 197374,
@@ -135,7 +135,7 @@ var countries = [{
 }, {
     name: 'United States',
     flag: 197484,
-    color: 'rgb(215, 0, 38)'
+    color: "#0085C7"
 }];
 
 
