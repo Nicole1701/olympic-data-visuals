@@ -149,7 +149,7 @@ function getData(data) {
     });
 }
 
-var chart = Highcharts.chart('container', {
+var chart = Highcharts.chart('medalbar', {
     chart: {
         type: 'column'
     },
