@@ -5,25 +5,26 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Inner Page - Lumia Bootstrap Template</title>
+  <title>Medals</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
   <!-- Icon -->
-  <link href="../images/olympicmedal_sm.jpg" rel="icon">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon-16x16.png">
+  <link rel="manifest" href="../static/vendor/site.webmanifest">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="../vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+ <!-- Vendor CSS Files -->
+ <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="../static/vendor/icofont/icofont.min.css" rel="stylesheet">
+ <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+ <link href="../static/vendor/venobox/venobox.css" rel="stylesheet">
+ <link href="../static/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="../css/style.css" rel="stylesheet">
+ <!-- Template Main CSS File -->
+ <link href="../static/css/style.css" rel="stylesheet">
 
   <!-- highcharts bar comparison -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -47,16 +48,16 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1><a href="index.html">Lumia</a></h1>
+        <a href=" / "> <img src="../static/images/olympic_icon.png"></a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li class="active"><a href="index.html#summary">Summary</a></li>
-          <li class="active"><a href="index.html#visuals">Visuals</a></li>
+          <li class="active"><a href='/'>Home</a></li>
+          <li class="active"><a href='/#summary'>Summary</a></li>
+          <li class="active"><a href='/#visuals'>Visuals</a></li>
           <li class="drop-down"><a href="">Comparison</a>
             <ul>
               <li><a href="gender.html">Gender</a></li>
@@ -64,14 +65,7 @@
               <li><a href="sports.html">Sports</a></li>
             </ul>
           </li>
-          <li class="drop-down"><a href="">Data</a>
-            <ul>
-              <li><a href="athletesdata.html">Athletes</a></li>
-              <li><a href="nocdata.html">NOC</a></li>
-              <li><a href="countriesdata.html">Countries</a></li>
-            </ul>
-          </li>
-        </ul>
+          <li class="active"><a href="athletesdata.html">Data</a></li>
       </nav><!-- .nav-menu -->
   </header><!-- End Header -->
 
@@ -84,8 +78,8 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Medals Analysis</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Inner Page</li>
+            <li><a href='/'>Home</a></li>
+            <li>Medals</li>
           </ol>
         </div>
 
@@ -95,15 +89,15 @@
     <section id = "inner" class="inner-page">
       <div class="container">
         <p>
-          <script src="../js/maplogic.js"></script>
+          <script src="../static/js/maplogic.js"></script>
         </p>
       </div>
     </section>
     <!-- map -->
     <section id = "map" class="map">
       <div id="mapcontainer" style="width:100%%; height:400px;">
-      {% comment %} <div class="container"> {% endcomment %}
-        <script src="../js/maplogic.js"></script>
+      {{ comment }} <div class="container"> {{ endcomment }}
+        <script src="../static/js/maplogic.js"></script>
       </div>
     </section>
       <!-- End map -->
@@ -129,7 +123,7 @@
       </section>
     <section id = "medalbar" class = "medalbar" style = "width:100%%; height:800px;">
    <div>
-      <script src="../js/medalbar.js"></script>
+      <script src="../static/js/medalbar.js"></script>
       </div>
       </section>
 
@@ -170,18 +164,18 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="../vendor/php-email-form/validate.js"></script>
-  <script src="../vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="../vendor/counterup/counterup.min.js"></script>
-  <script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../vendor/venobox/venobox.min.js"></script>
-  <script src="../vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/vendor/owl.carousel/owl.carousel.min.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="../js/main.js"></script>
+  <script src="../static/js/main.js"></script>
 <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
     integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
@@ -191,16 +185,16 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
     integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
     crossorigin=""></script>
     <!-- API key -->
-    <script type="text/javascript" src="../js/config.js"></script>
+    <script type="text/javascript" src="../static/js/config.js"></script>
       <!-- JS  -->
-    <script type="text/javascript" src="../js/maplogic.js"></script>
+    <script type="text/javascript" src="../static/js/maplogic.js"></script>
 </body>
 
 </html>

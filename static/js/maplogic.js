@@ -14,7 +14,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 // Use this link to get the geojson data.
-var link = "../data/countries.geojson";
+var link = "../static/data/countries.geojson";
 
 // Function that will determine the color of a country based on the medals count? it belongs to
 function chooseColor(ADMIN) {
