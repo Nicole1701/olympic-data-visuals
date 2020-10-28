@@ -2,23 +2,22 @@
 ################## Import ##################
 ############################################
 
-import os
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-app = Flask(__name__)
+app1 = Flask(__name__)
 
 
 ############################################
 ######### SQL DATABASE AND MODELS ##########
 ############################################
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/olympic"
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+app1 = Flask(__name__)
+app1.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/olympic"
+db = SQLAlchemy(app1)
+migrate = Migrate(app1, db)
 
-db = SQLAlchemy(app)
-Migrate(app, db)
+db = SQLAlchemy(app1)
+Migrate(app1, db)
 
 
 class athletes(db.Model):
@@ -42,34 +41,34 @@ class athletes(db.Model):
 ################## Home ##################
 
 
-@app.route('/')
+@app1.route('/')
 def index():
     return render_template('index.html')
 
 
 ################## Gender ##################
-@app.route('/gender.html')
+@app1.route('/gender.html')
 def gender():
     return render_template('gender.html')
 
 
 ################## Medals ##################
-@app.route('/medals.html')
+@app1.route('/medals.html')
 def medals():
     return render_template('medals.html')
 
 
 ################## Sports ##################
-@app.route('/sports.html')
+@app1.route('/sports.html')
 def sports():
     return render_template('sports.html')
 
 
 ################## Data ##################
-@app.route('/athletesdata.html')
+@app1.route('/athletesdata.html')
 def data():
     return render_template('athletesdata.html')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app1.run(debug=True)
