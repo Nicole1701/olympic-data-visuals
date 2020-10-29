@@ -6,29 +6,30 @@ import os
 from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, func
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+import numpy as np
 
 ############################################
 ######### SQL DATABASE AND MODELS ##########
 ############################################
+
+#################################################
+# Database Setup
+#################################################
+engine = create_engine("postgresql://postgres:postgres@localhost:5432/olympics")
+
+# reflect an existing database into a new model
+Base = automap_base()
+# reflect the tables
+Base.prepare(engine, reflect=True)
+
+# Save references to the tables
+Countries = Base.classes.noc_data
+AthleteData = Base.classes.athlete_data
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/olympics"
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'FALSE'
-
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-
-############################################
-class Countries(db.Model):
-    __tablename__ = "noc_data"
-
-    noc = db.Column(db.String, primary_key=True)
-    country = db.Column(db.String(), nullable = False)
-
-    def __init__(self,noc,country):
-        self.noc = noc
-        self.country = country
-
 
 ################## Routes ##################
 ############################################
@@ -36,48 +37,84 @@ class Countries(db.Model):
 ################## Home ##################
 
 
-@app.route('/')
+@app.route("/")
 def index():
     return render_template('index.html')
-
-# Countries#
-@app.route("/countries", methods=['GET'])
-def getCountries():
-    allCountries = Countries.query.all()
-    results = [
-            {
-                "noc" : c.noc,
-                "country": c.country
-            } for c in allCountries]
-
-    # return jsonify(results)
-    return {"count": len(results), "countries":results}
-
-
 
 ################## Gender ##################
 @app.route('/gender.html')
 def gender():
-    return render_template('gender.html')
+    session = Session(engine)
+    
+    results = session.query(AthleteData.year,AthleteData.sex,AthleteData.id).distinct(AthleteData.year,AthleteData.sex,AthleteData.id).group_by(AthleteData.year,AthleteData.sex,AthleteData.id).all()
+    session.close()
+
+    all_results = []
+    for item in results:
+        item_dict = {}
+        item_dict["year"] = item[0]
+        item_dict["sex"] = item[1]
+        item_dict["id"] = item[2]
+        all_results.append(item_dict)
+
+    return jsonify(all_results)
 
 
 ################## Medals ##################
 @app.route('/medals.html')
 def medals():
-    return render_template('medals.html')
+    session = Session(engine)
+
+    results = session.query(AthleteData.country, AthleteData.year, func.count(AthleteData.medal)).filter(AthleteData.medal != 'None').group_by(AthleteData.country, AthleteData.year).all()
+
+    session.close()
+
+   # Create a dictionary from the row data and append to a list of all_results
+    all_results = []
+    for item in results:
+        item_dict = {}
+        item_dict["country"] = item[0]
+        item_dict["year"] = item[1]
+        item_dict["medal"] = item[2]
+        all_results.append(item_dict)
+
+
+    return jsonify(all_results)
 
 
 ################## Sports ##################
 @app.route('/sports.html')
 def sports():
-    return render_template('sports.html')
+    session = Session(engine)
+
+    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sport).filter(AthleteData.season != '',AthleteData.sport != '').group_by(AthleteData.year, AthleteData.season,AthleteData.sport).all()
+
+    session.close()
+
+   # Create a dictionary from the row data and append to a list of all_results
+    all_results = []
+    for item in results:
+        item_dict = {}
+        item_dict["year"] = item[0]
+        item_dict["season"] = item[1]
+        item_dict["sport"] = item[2]
+        all_results.append(item_dict)
+
+
+    return jsonify(all_results)
 
 
 ################## Data ##################
-@app.route("/athletesdata.html", methods=['GET'])
-def getAthleteData():
-    allAthleteData = AthleteData.query.all()
-    results = [
+@app.route("/athletesdata.html")
+def athletesData():
+    session = Session(engine)
+
+    results = session.query(AthleteData).all()
+
+    session.close()
+
+   # Create a dictionary from the row data and append to a list of all_results
+    all_results = [
             {
                 "noc" : a.noc,
                 "country" : a.country,
@@ -91,15 +128,9 @@ def getAthleteData():
                 "sport" : a.sport,
                 "event" : a.event,
                 "medal" : a.medal
-            } for a in allAthleteData]
+            } for a in results]
 
-    # return jsonify(results)
-    return {"count": len(results), "athlete":results}
-
-
-
-def data():
-    return render_template('athletesdata.html')
+    return jsonify(all_results)
 
 
 if __name__ == '__main__':
