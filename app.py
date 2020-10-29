@@ -3,39 +3,33 @@
 ############################################
 
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-app = Flask(__name__)
-
+from sqlalchemy import create_engine
 
 ############################################
 ######### SQL DATABASE AND MODELS ##########
 ############################################
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/olympic"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/olympics"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'FALSE'
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-db = SQLAlchemy(app)
-Migrate(app, db)
+############################################
+class Countries(db.Model):
+    __tablename__ = "noc_data"
 
+    noc = db.Column(db.String, primary_key=True)
+    country = db.Column(db.String(), nullable = False)
 
-class athletes(db.Model):
-    __tablename__ = 'athletes_data'
-
-    id = db.Column(db.Integer, primary_key=True)
-    sex = db.Column(db.String())
-    country = db.Column(db.String())
-
-    def __init__(self, sex, country):
-        self.sex = sex
+    def __init__(self,noc,country):
+        self.noc = noc
         self.country = country
 
-    def __repr__(self):
-        return f"<Country {self.country}>"
 
-############################################
 ################## Routes ##################
 ############################################
 
@@ -45,6 +39,20 @@ class athletes(db.Model):
 @app.route('/')
 def index():
     return render_template('index.html')
+
+# Countries#
+@app.route("/countries", methods=['GET'])
+def getCountries():
+    allCountries = Countries.query.all()
+    results = [
+            {
+                "noc" : c.noc,
+                "country": c.country
+            } for c in allCountries]
+
+    # return jsonify(results)
+    return {"count": len(results), "countries":results}
+
 
 
 ################## Gender ##################
@@ -66,7 +74,30 @@ def sports():
 
 
 ################## Data ##################
-@app.route('/athletesdata.html')
+@app.route("/athletesdata.html", methods=['GET'])
+def getAthleteData():
+    allAthleteData = AthleteData.query.all()
+    results = [
+            {
+                "noc" : a.noc,
+                "country" : a.country,
+                "id" : a.id,
+                "name" : a.name,
+                "sex" : a.sex,
+                "age" : a.age,
+                "year" : a.year,
+                "season" : a.season,
+                "city" : a.city,
+                "sport" : a.sport,
+                "event" : a.event,
+                "medal" : a.medal
+            } for a in allAthleteData]
+
+    # return jsonify(results)
+    return {"count": len(results), "athlete":results}
+
+
+
 def data():
     return render_template('athletesdata.html')
 
