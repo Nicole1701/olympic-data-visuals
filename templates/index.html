@@ -26,7 +26,21 @@
 
   <!-- Template Main CSS File -->
   <link href="../static/css/style.css" rel="stylesheet">
+<!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
 
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
 
   <!-- =======================================================
   * Template Name: Lumia - v2.1.0
@@ -57,12 +71,12 @@
           <li class="active"><a href="/#visuals">Visuals</a></li>
           <li class="drop-down"><a href="">Comparison</a>
             <ul>
-              <li><a href="gender.html">Gender</a></li>
-              <li><a href="medals.html">Medals</a></li>
-              <li><a href="sports.html">Sports</a></li>
+              <li><a href="/gender">Gender</a></li>
+              <li><a href="/medals">Medals</a></li>
+              <li><a href="/sports">Sports</a></li>
             </ul>
           </li>
-          <li class="active"><a href="athletesdata.html">Data</a></li>
+          <li class="active"><a href="/athletesdata">Data</a></li>
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
@@ -103,21 +117,21 @@
           <div class="col-md-6">
             <div class="icon-box">
               <i class="icofont-female"></i>
-              <h4><a href="gender.html">Gender</a></h4>
+              <h4><a href="/gender">Gender</a></h4>
               <p>A visual representation of gender over time in the Olympics.</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-lg-0">
             <div class="icon-box">
               <i class="icofont-medal"></i>
-              <h4><a href="medals.html">Medals</a></h4>
+              <h4><a href="/medals">Medals</a></h4>
               <p>Medals earned by country.</p>
             </div>
           </div>
           <div class="col-md-6 mt-4">
             <div class="icon-box">
               <i class="icofont-swimmer"></i>
-              <h4><a href="sports.html">Sports</a></h4>
+              <h4><a href="/sports">Sports</a></h4>
               <p>A look at the different sports included in the Olympics.</p>
             </div>
           </div>
