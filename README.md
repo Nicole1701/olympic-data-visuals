@@ -1,6 +1,6 @@
 # A Look At The Olympics (1896-2016)
 
-![Olympic Rings](assets/images/olympic_rings.png)
+![Olympic Rings](static/images/olympic_rings.png)
 
 ## Project Contributors
 
@@ -16,7 +16,7 @@
 - **Main Data Source**: [120 Years of Olympic History](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results/home). This is a historical dataset on the modern Olympic Games, including all the Games from Athens 1896 to Rio 2016. Also includes a NOC (National Olympic Committee) dataset that will allow us to map each athlete to a country.
 - **Lat/Long Coordinates by Country**: [Latitude and Longitude for Every Country and State](https://www.kaggle.com/paultimothymooney/latitude-and-longitude-for-every-country-and-state). This dataset will be used to get the lat/long coordinates of each country/city for map overlays.
 - **Example of Data**: <br />
-  ![Example Data](assets/images/example_data.jpg)
+  ![Example Data](static/images/example_data.jpg)
 
 ## Proposed Analysis
 
@@ -42,9 +42,9 @@
 
 - Charts should have a toggle for summer/winter olympics
 - Bubble chart over time - Gender by country over time <br />
-  ![Bubble Chart Over Time](assets/images/example_bubble_over_time.JPG)
+  ![Bubble Chart Over Time](static/images/example_bubble_over_time.JPG)
 - Map overlay of countries with medal counts<br />
-  ![Example Map](assets/images/example_map.png)
+  ![Example Map](static/images/example_map.png)
 - Filterable table of the data
 - Link to proposed website mockup: [PDF Mockup](proposal/example_website_layout.pdf)
 
