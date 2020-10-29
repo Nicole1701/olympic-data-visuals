@@ -2,73 +2,69 @@
 ################## Import ##################
 ############################################
 
-from flask import Flask, render_template
+import os
+from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-app1 = Flask(__name__)
-
+from sqlalchemy import create_engine
 
 ############################################
 ######### SQL DATABASE AND MODELS ##########
 ############################################
-app1 = Flask(__name__)
-app1.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/olympic"
-db = SQLAlchemy(app1)
-migrate = Migrate(app1, db)
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost:5432/olympics"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'FALSE'
 
-db = SQLAlchemy(app1)
-Migrate(app1, db)
-
-
-class athletes(db.Model):
-    __tablename__ = 'athletes_data'
-
-    id = db.Column(db.Integer, primary_key=True)
-    sex = db.Column(db.String())
-    country = db.Column(db.String())
-
-    def __init__(self, sex, country):
-        self.sex = sex
-        self.country = country
-
-    def __repr__(self):
-        return f"<Country {self.country}>"
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 ############################################
+class Countries(db.Model):
+    __tablename__ = "noc_data"
+
+    noc = db.Column(db.String, primary_key=True)
+    country = db.Column(db.String(), nullable = False)
+
+    def __init__(self,noc,country):
+        self.noc = noc
+        self.country = country
+
+
 ################## Routes ##################
 ############################################
 
 ################## Home ##################
 
 
-@app1.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
 
 ################## Gender ##################
-@app1.route('/gender.html')
+@app.route('/gender')
 def gender():
     return render_template('gender.html')
 
 
 ################## Medals ##################
-@app1.route('/medals.html')
+@app.route('/medals')
 def medals():
     return render_template('medals.html')
 
 
 ################## Sports ##################
-@app1.route('/sports.html')
+@app.route('/sports')
 def sports():
     return render_template('sports.html')
 
 
 ################## Data ##################
-@app1.route('/athletesdata.html')
-def data():
+@app.route("/athletesdata")
+def athletesdata():
     return render_template('athletesdata.html')
 
 
+
 if __name__ == '__main__':
-    app1.run(debug=True)
+    app.run(debug=True)
