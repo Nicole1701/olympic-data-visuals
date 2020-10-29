@@ -166,7 +166,7 @@ var chart = Highcharts.chart('medalbar', {
         }
     },
     legend: {
-        enabled: false
+        enabled: true
     },
     tooltip: {
         shared: true,
@@ -240,7 +240,7 @@ years.forEach(function(year) {
 
         chart.update({
             title: {
-                text: 'Summer Olympics ' + year + ' - Top 5 countries by Gold medals'
+                text: 'Winter Olympics ' + year + ' - Top 5 countries by Gold medals'
             },
             subtitle: {
                 text: 'Comparing to results from Summer Olympics ' + (year - 4) + ' - Source: <ahref="https://en.wikipedia.org/wiki/' + (year) + '_Summer_Olympics_medal_table">Wikipedia</a>'

@@ -15,32 +15,37 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 // Use this link to get the geojson data.
 var link = "../data/countries.geojson";
-
-// Function that will determine the color of a country based on the medals count? it belongs to
+// Official Olympic Colors
+var olyblue = "#0085C7"
+var olygold = "#F4C300"
+var olyblack = "#000000"
+var olygreen = "#009F3D"
+var olyred = "#DF0024"
+    // Function that will determine the color of a country based on the medals count? it belongs to
 function chooseColor(ADMIN) {
     switch (ADMIN) {
         case "United Kingdom":
-            return "#0085C7";
+            return olyblue;
         case "Algeria":
-            return "#F4C300";
+            return olygold;
         case "China":
-            return "#DF0024";
+            return olyred;
         case "Russia":
-            return "#DF0024";
+            return olyred;
         case "United States of America":
-            return "#0085C7";
+            return olyblue;
         case "Spain":
-            return "#DF0024";
+            return olyred;
         case "France":
-            return "#F4C300";
+            return olygold;
         case "Brazil":
-            return "#009F3D";
+            return olygreen;
         case "Japan":
-            return "black";
+            return olyblack;
         case "Germany":
-            return "black";
+            return olyblack;
         case "India":
-            return "#F4C300";
+            return olygreen;
         default:
             return "#d3ffff";
     }
