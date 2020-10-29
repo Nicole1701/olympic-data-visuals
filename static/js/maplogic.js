@@ -14,7 +14,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 // Use this link to get the geojson data.
-var link = "../data/countries.geojson";
+var link = "../static/data/countries.geojson";
 // Official Olympic Colors
 var olyblue = "#0085C7"
 var olygold = "#F4C300"
@@ -100,7 +100,7 @@ d3.json(link).then(data => {
                 }
             });
             // Giving each feature a pop-up with information pertinent to it
-            layer.bindPopup("<h3>" + feature.properties.ADMIN + "</h3> <hr> <h4>" + "Athena Rating & Medal Count and Stuff" + "</h4>");
+            layer.bindPopup("<h3>" + feature.properties.ADMIN + "</h3> <hr> <h4>" + "Api call from flask app.py route /medals" + "</h4>");
 
         }
     }).addTo(myMap);
