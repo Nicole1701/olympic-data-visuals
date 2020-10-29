@@ -106,6 +106,9 @@ d3.json(link).then(data => {
     }).addTo(myMap);
 });
 
+d3.json(all_results).then(data => {
+    console.log(data);
+  });
 
 // create time slider ? Is this a New Library we haven't gone over in class?)
 // match geoJSON country names with kaggle Olympic data country names
