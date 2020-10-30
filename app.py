@@ -10,6 +10,7 @@ from sqlalchemy import create_engine, func
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 import numpy as np
+from config import POSTGRES_LINK
 
 ############################################
 ######### SQL DATABASE AND MODELS ##########
@@ -18,7 +19,8 @@ import numpy as np
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("postgresql://postgres:postgres@localhost:5432/olympics")
+engine = create_engine(POSTGRES_LINK)
+
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -42,8 +44,13 @@ def index():
     return render_template('index.html')
 
 ################## Gender ##################
-@app.route('/gender.html')
+@app.route('/gender')
 def gender():
+    return render_template('gender.html')
+
+
+@app.route('/api/gender')
+def genderapi():
     session = Session(engine)
     
     results = session.query(AthleteData.year,AthleteData.sex,AthleteData.id).distinct(AthleteData.year,AthleteData.sex,AthleteData.id).group_by(AthleteData.year,AthleteData.sex,AthleteData.id).all()
@@ -61,8 +68,13 @@ def gender():
 
 
 ################## Medals ##################
-@app.route('/medals.html')
+@app.route('/medals')
 def medals():
+    return render_template('medals.html')
+
+
+@app.route('/api/medals')
+def medalsapi():
     session = Session(engine)
 
     results = session.query(AthleteData.country, AthleteData.year, func.count(AthleteData.medal)).filter(AthleteData.medal != 'None').group_by(AthleteData.country, AthleteData.year).all()
@@ -83,8 +95,14 @@ def medals():
 
 
 ################## Sports ##################
-@app.route('/sports.html')
+
+@app.route('/sports')
 def sports():
+    return render_template('sports.html')
+
+
+@app.route('/api/sports')
+def sportsapi():
     session = Session(engine)
 
     results = session.query(AthleteData.year, AthleteData.season, AthleteData.sport).filter(AthleteData.season != '',AthleteData.sport != '').group_by(AthleteData.year, AthleteData.season,AthleteData.sport).all()
@@ -105,8 +123,14 @@ def sports():
 
 
 ################## Data ##################
-@app.route("/athletesdata.html")
-def athletesData():
+
+@app.route("/athletesdata")
+def athletesdata():
+    return render_template('athletesdata.html')
+
+
+@app.route("/api/athletesdata")
+def athletesDataApi():
     session = Session(engine)
 
     results = session.query(AthleteData).all()
