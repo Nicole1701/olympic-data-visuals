@@ -1,25 +1,24 @@
-let data = d3.json("api/sports").then((data) => {
-       console.log(data);
+// let data = d3.json("api/sports").then((data) => {
+//        console.log(data);
 
-    series = [{
-        name: 'Summer',
-        data: []
-    },{
-        name: 'Winter'
-        data: []
-    }];
-    });
+//     series = [{
+//         name: 'Summer',
+//         data: []
+//     },{
+//         name: 'Winter',
+//         data: []
+//     }];
 
-data.forEach(point => {
-        series.forEach(series => {
-          if (series.name === point.season) {
-            series.data.push({
-              x: new year(point.year).,//getTime(),
-              y: point.sport
-            })
-          }
-        });
-      });
+// data.forEach(point => {
+//     series.forEach(series => {
+//         if (series.name === point.season) {
+//             series.data.push({
+//               x: point.year,
+//               y: point.sport
+//             })
+//         }
+//     });
+// });
 
 Highcharts.chart('sports-container', {
     chart: {
@@ -34,8 +33,9 @@ Highcharts.chart('sports-container', {
         }
     },
     xAxis: {
-        // categories: [1896, 1900, 1904, 1906, 1908, 1912, 1920, 1924, 1928, 1932, 1936, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016],
-        categories: [series]
+        categories: [1896, 1900, 1904, 1906, 1908, 1912, 1920, 1924, 1928, 1932, 1936, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016],
+        // categories: series,
+        // type: 'year',
         title: {
             text: 'Years',
             style: {
@@ -92,18 +92,17 @@ Highcharts.chart('sports-container', {
     },
     series: [{
         name: 'Summer',
-        // data: [9, 20, 18, 13, 24, 17, 25, 20, 17, 18, 24, 20, 19, 19, 19, 21, 20, 23, 23, 23, 25, 27, 29, 31, 34, 34, 34, 32, 34],
-        data: [series]
+        data: [9, 20, 18, 13, 24, 17, 25, 20, 17, 18, 24, 20, 19, 19, 19, 21, 20, 23, 23, 23, 25, 27, 29, 31, 34, 34, 34, 32, 34],
         color: '#FF0000'
     }, {
         name: 'Winter',
-        // data: [0, 0, 0, 0, 0, 0, 0, 10, 8, 7, 8, 9, 8, 8, 8, 10, 10, 10, 10, 10, 10, 10, 12, 12, 14, 15, 15, 15, 15],
-        data: [series]
+        data: [0, 0, 0, 0, 0, 0, 0, 10, 8, 7, 8, 9, 8, 8, 8, 10, 10, 10, 10, 10, 10, 10, 12, 12, 14, 15, 15, 15, 15],
         color: '#000080'
     }
     ]
 });
-d3.json(all_results).then(data => {
-    console.log(data);
-  });
-  
+// d3.json(all_results).then(data => {
+//     console.log(data);
+//   });
+
+// });
