@@ -48,20 +48,47 @@ def index():
 def gender():
     return render_template('gender.html')
 
-
 @app.route('/api/gender')
-def genderapi():
+def gendercount():
     session = Session(engine)
     
-    results = session.query(AthleteData.year,AthleteData.sex,AthleteData.id).distinct(AthleteData.year,AthleteData.sex,AthleteData.id).group_by(AthleteData.year,AthleteData.sex,AthleteData.id).all()
+    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sex, func.count(AthleteData.id)).\
+        distinct(AthleteData.year, AthleteData.season, AthleteData.sex, AthleteData.id).\
+        order_by(AthleteData.year).\
+        group_by(AthleteData.year, AthleteData.season, AthleteData.sex, AthleteData.id).all()
     session.close()
 
     all_results = []
     for item in results:
         item_dict = {}
         item_dict["year"] = item[0]
-        item_dict["sex"] = item[1]
-        item_dict["id"] = item[2]
+        item_dict["season"] = item[1]
+        item_dict["sex"] = item[2]
+        item_dict["count"] = item[3]
+        all_results.append(item_dict)
+
+    return jsonify(all_results)
+
+
+@app.route('/api/gender/country')
+def gendercountry():
+    session = Session(engine)
+    
+    results = session.query(AthleteData.year, AthleteData.season, AthleteData.country,AthleteData.noc, AthleteData.sex, func.count(AthleteData.id)).\
+        distinct(AthleteData.year, AthleteData.season, AthleteData.country, AthleteData.noc, AthleteData.sex, AthleteData.id).\
+        order_by(AthleteData.year, AthleteData.noc).\
+        group_by(AthleteData.year, AthleteData.season, AthleteData.country, AthleteData.noc, AthleteData.sex, AthleteData.id).all()
+    session.close()
+
+    all_results = []
+    for item in results:
+        item_dict = {}
+        item_dict["year"] = item[0]
+        item_dict["season"] = item[1]
+        item_dict["country"] = item[2]
+        item_dict["noc"] = item[3]
+        item_dict["sex"] = item[4]
+        item_dict["count"] = item[5]
         all_results.append(item_dict)
 
     return jsonify(all_results)
