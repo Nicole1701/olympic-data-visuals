@@ -51,7 +51,11 @@ function chooseColor(ADMIN) {
     }
 }
 
-// bring in cleaned olympic data from kaggle
+// bring in cleaned olympic data from flask app
+let medaldata = d3.json("api/medals").then((medaldata) => {
+    console.log(medaldata);
+});
+
 // mouseOn move shows pop-up with country name
 // mouseOff undo move 
 // bind the pop-up and fill popup with country name and medal count
@@ -106,9 +110,9 @@ d3.json(link).then(data => {
     }).addTo(myMap);
 });
 
-d3.json(all_results).then(data => {
-    console.log(data);
-  });
+// d3.json(all_results).then(data => {
+//     console.log(data);
+// });
 
 // create time slider ? Is this a New Library we haven't gone over in class?)
 // match geoJSON country names with kaggle Olympic data country names
