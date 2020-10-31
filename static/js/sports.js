@@ -1,3 +1,6 @@
+let sportData = d3.json("api/sports").then((data) => {
+    console.log(data);
+
 Highcharts.chart('sports-container', {
     chart: {
         height: 1000,
@@ -85,7 +88,5 @@ Highcharts.chart('sports-container', {
     }
     ]
 });
-d3.json("/api/sports").then(data => {
-    console.log(data);
   });
   
