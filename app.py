@@ -48,22 +48,49 @@ def index():
 def gender():
     return render_template('gender.html')
 
-@app.route('/api/gender')
-def gendercount():
+@app.route('/api/gender/summer')
+def genderSummer():
     session = Session(engine)
     
-    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sex, func.count(AthleteData.id.distinct())).\
-        distinct(AthleteData.year, AthleteData.season, AthleteData.sex).\
+    results = session.query(AthleteData.year, AthleteData.sex, AthleteData.season, func.count(AthleteData.id.distinct())).\
+        distinct(AthleteData.year, AthleteData.sex, AthleteData.season).\
+        filter(AthleteData.season == 'Summer').\
         order_by(AthleteData.year).\
-        group_by(AthleteData.year, AthleteData.season, AthleteData.sex).all()
+        group_by(AthleteData.year, AthleteData.sex, AthleteData.season).all()
     session.close()
+
+
 
     all_results = []
     for item in results:
         item_dict = {}
         item_dict["year"] = item[0]
-        item_dict["season"] = item[1]
-        item_dict["sex"] = item[2]
+        item_dict["sex"] = item[1]
+        item_dict["season"] = item[2]
+        item_dict["count"] = item[3]
+        all_results.append(item_dict)
+
+    return jsonify(all_results)
+
+@app.route('/api/gender/winter')
+def genderWinter():
+    session = Session(engine)
+    
+    results = session.query(AthleteData.year, AthleteData.sex, AthleteData.season, func.count(AthleteData.id.distinct())).\
+        distinct(AthleteData.year, AthleteData.sex, AthleteData.season).\
+        filter(AthleteData.season == 'Winter').\
+        order_by(AthleteData.year).\
+        group_by(AthleteData.year, AthleteData.sex, AthleteData.season).all()
+    session.close()
+
+
+
+    all_results = []
+    for item in results:
+        item_dict = {}
+        item_dict["year"] = item[0]
+        item_dict["sex"] = item[1]
+        item_dict["season"] = item[2]
         item_dict["count"] = item[3]
         all_results.append(item_dict)
 
@@ -132,7 +159,11 @@ def sports():
 def sportsapi():
     session = Session(engine)
 
-    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sport).filter(AthleteData.season != '',AthleteData.sport != '').group_by(AthleteData.year, AthleteData.season,AthleteData.sport).all()
+    results = session.query(AthleteData.year, AthleteData.season, func.count(AthleteData.sport.distinct())).\
+        distinct(AthleteData.year, AthleteData.season).\
+        filter(AthleteData.season != '',AthleteData.sport != '').\
+        group_by(AthleteData.year, AthleteData.season).\
+        order_by(AthleteData.year).all()
 
     session.close()
 

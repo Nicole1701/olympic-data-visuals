@@ -1,28 +1,41 @@
+let data = d3.json("api/sports").then((data) => {
+       console.log(data);
+
+    series = [{
+        name: 'Summer',
+        data: []
+    },{
+        name: 'Winter'
+        data: []
+    }];
+    });
+
+data.forEach(point => {
+        series.forEach(series => {
+          if (series.name === point.season) {
+            series.data.push({
+              x: new year(point.year).,//getTime(),
+              y: point.sport
+            })
+          }
+        });
+      });
+
 Highcharts.chart('sports-container', {
     chart: {
-        height: 1000,
-        // backgroundColor: '#D3D3D3',
+        height: 800,
+        width: 700,
         type: 'bar'
     },
-    // series: {
-    //     type: 'bar',
-    //     borderColor: '#FFFFFF'
-    // },
     title: {
         text: '120 Years of Olympic Sports',
-        style: {
-            fontSize: '30px'
-        }
-    },
-    subtitle: {
-        text: 'Source: <a href="https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results/home">Kaggle.com</a>',
         style: {
             fontSize: '20px'
         }
     },
-
     xAxis: {
-        categories: [1896, 1900, 1904, 1906, 1908, 1912, 1920, 1924, 1928, 1932, 1936, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016],
+        // categories: [1896, 1900, 1904, 1906, 1908, 1912, 1920, 1924, 1928, 1932, 1936, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016],
+        categories: [series]
         title: {
             text: 'Years',
             style: {
@@ -63,10 +76,13 @@ Highcharts.chart('sports-container', {
         layout: 'vertical',
         align: 'right',
         verticalAlign: 'top',
-        x: -40,
+        x: 0,
         y: 80,
         floating: true,
         borderWidth: 1,
+        itemStyle: {
+            fontSize: '18px'
+        },
         backgroundColor:
             Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
         shadow: true
@@ -76,11 +92,13 @@ Highcharts.chart('sports-container', {
     },
     series: [{
         name: 'Summer',
-        data: [9, 20, 18, 13, 24, 17, 25, 20, 17, 18, 24, 20, 19, 19, 19, 21, 20, 23, 23, 23, 25, 27, 29, 31, 34, 34, 34, 32, 34],
+        // data: [9, 20, 18, 13, 24, 17, 25, 20, 17, 18, 24, 20, 19, 19, 19, 21, 20, 23, 23, 23, 25, 27, 29, 31, 34, 34, 34, 32, 34],
+        data: [series]
         color: '#FF0000'
     }, {
         name: 'Winter',
-        data: [0, 0, 0, 0, 0, 0, 0, 10, 8, 7, 8, 9, 8, 8, 8, 10, 10, 10, 10, 10, 10, 10, 12, 12, 14, 15, 15, 15, 15],
+        // data: [0, 0, 0, 0, 0, 0, 0, 10, 8, 7, 8, 9, 8, 8, 8, 10, 10, 10, 10, 10, 10, 10, 12, 12, 14, 15, 15, 15, 15],
+        data: [series]
         color: '#000080'
     }
     ]
