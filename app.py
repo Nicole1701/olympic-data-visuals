@@ -107,7 +107,9 @@ def medals():
 def medalsapi():
     session = Session(engine)
 
-    results = session.query(AthleteData.country, AthleteData.year, func.count(AthleteData.medal)).filter(AthleteData.medal != 'None').group_by(AthleteData.country, AthleteData.year).all()
+    results = session.query(AthleteData.country, AthleteData.year, func.count(AthleteData.medal)).\
+        filter(AthleteData.medal != 'None').\
+        group_by(  AthleteData.country, AthleteData.year).all()
 
     session.close()
 
