@@ -6,7 +6,7 @@ import os
 from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from sqlalchemy import create_engine, func
+from sqlalchemy import create_engine, func, distinct
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 import numpy as np
@@ -52,11 +52,14 @@ def gender():
 def gendercount():
     session = Session(engine)
     
-    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sex, func.count(AthleteData.id)).\
-        distinct(AthleteData.year, AthleteData.season, AthleteData.sex, AthleteData.id).\
+    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sex, func.count(AthleteData.id.distinct())).\
+        distinct(AthleteData.year, AthleteData.season, AthleteData.sex).\
         order_by(AthleteData.year).\
-        group_by(AthleteData.year, AthleteData.season, AthleteData.sex, AthleteData.id).all()
+        group_by(AthleteData.year, AthleteData.season, AthleteData.sex).all()
     session.close()
+
+
+
 
     all_results = []
     for item in results:
@@ -132,7 +135,10 @@ def sports():
 def sportsapi():
     session = Session(engine)
 
-    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sport).filter(AthleteData.season != '',AthleteData.sport != '').group_by(AthleteData.year, AthleteData.season,AthleteData.sport).all()
+    results = session.query(AthleteData.year, AthleteData.season, func.count(AthleteData.sport.distinct())).\
+            distinct(AthleteData.year, AthleteData.season).\
+            filter(AthleteData.season != '',AthleteData.sport != '').\
+            group_by(AthleteData.year, AthleteData.season).all()
 
     session.close()
 

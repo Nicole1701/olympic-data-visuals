@@ -85,7 +85,7 @@ Highcharts.chart('sports-container', {
     }
     ]
 });
-d3.json(all_results).then(data => {
+d3.json("/api/sports").then(data => {
     console.log(data);
   });
   

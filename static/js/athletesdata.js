@@ -1,3 +1,3 @@
-d3.json(all_results).then(data => {
+d3.json("/api/athletesdata").then(data => {
     console.log(data);
   });
