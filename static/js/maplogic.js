@@ -45,7 +45,7 @@ function chooseColor(ADMIN) {
         case "Germany":
             return olyblack;
         case "India":
-            return olygreen;
+            return olyblack;
         default:
             return "#d3ffff";
     }
@@ -113,11 +113,3 @@ d3.json(link).then(data => {
 // d3.json(all_results).then(data => {
 //     console.log(data);
 // });
-
-// create time slider ? Is this a New Library we haven't gone over in class?)
-// match geoJSON country names with kaggle Olympic data country names
-// create legend/key in top corner with the followingn options:
-// user input: Summer/Winter toggle that changes the CSS theme and data layer
-// user input: Year input that moves the time slider to an exact year
-// user input Filter: Female medals, Male medals
-// user input Filter: ??Team medals, Individual medals??
