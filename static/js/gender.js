@@ -23,7 +23,8 @@ data.forEach(point => {
 Highcharts.chart('container', {
 
   xAxis: {
-    type: 'datetime'
+    type: 'year',
+    tickLength: 10
   },
 
   series: series
