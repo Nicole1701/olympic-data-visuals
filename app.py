@@ -52,10 +52,10 @@ def gender():
 def gendercount():
     session = Session(engine)
     
-    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sex, func.count(AthleteData.id)).\
-        distinct(AthleteData.year, AthleteData.season, AthleteData.sex, AthleteData.id).\
+    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sex, func.count(AthleteData.id.distinct())).\
+        distinct(AthleteData.year, AthleteData.season, AthleteData.sex).\
         order_by(AthleteData.year).\
-        group_by(AthleteData.year, AthleteData.season, AthleteData.sex, AthleteData.id).all()
+        group_by(AthleteData.year, AthleteData.season, AthleteData.sex).all()
     session.close()
 
     all_results = []
