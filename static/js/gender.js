@@ -2,10 +2,10 @@ let genderData = d3.json("api/gender").then((data) => {
   console.log(data);
 
   series = [{
-    name: 'Summer',
+    name: 'M',
     data: []
   }, {
-    name: 'Winter',
+    name: 'F',
     data: []
   }];
 
