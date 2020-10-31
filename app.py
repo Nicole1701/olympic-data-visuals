@@ -132,7 +132,11 @@ def sports():
 def sportsapi():
     session = Session(engine)
 
-    results = session.query(AthleteData.year, AthleteData.season, AthleteData.sport).filter(AthleteData.season != '',AthleteData.sport != '').group_by(AthleteData.year, AthleteData.season,AthleteData.sport).all()
+    results = session.query(AthleteData.year, AthleteData.season, func.count(AthleteData.sport.distinct())).\
+        distinct(AthleteData.year, AthleteData.season).\
+        filter(AthleteData.season != '',AthleteData.sport != '').\
+        group_by(AthleteData.year, AthleteData.season).\
+        order_by(AthleteData.year).all()
 
     session.close()
 
