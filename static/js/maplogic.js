@@ -13,6 +13,18 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: API_KEY
 }).addTo(myMap);
 
+// // Adding Medal layer
+// var medalLayer =L.medalLayer(_data, {
+
+// });
+
+
+// $.getJSON(medalcount, function(data) {
+//     L.geoJson(data).addTo(map);
+// });
+// // layer control
+// L.control.layers(tileLayer, medalLayer).addTo(map);
+
 // Use this link to get the geojson data.
 var link = "../static/data/countries.geojson";
 // Official Olympic Colors
@@ -51,9 +63,10 @@ function chooseColor(ADMIN) {
     }
 }
 
-// bring in cleaned olympic data from flask app
-let medaldata = d3.json("api/medals").then((medaldata) => {
-    console.log(medaldata);
+// // bring in cleaned olympic medal data from flask app
+d3.json("api/medals").then((_data) => {
+
+    console.log(_data);
 });
 
 // mouseOn move shows pop-up with country name
@@ -104,12 +117,12 @@ d3.json(link).then(data => {
                 }
             });
             // Giving each feature a pop-up with information pertinent to it
-            layer.bindPopup("<h3>" + feature.properties.ADMIN + "</h3> <hr> <h4>" + "Api call from flask app.py route /medals" + "</h4>");
+            layer.bindPopup(`<h3>${feature.properties.ADMIN}</h3> <hr> <h4>Api call from flask app.py route /medals</h4>`);
 
         }
     }).addTo(myMap);
 });
 
-// d3.json(all_results).then(data => {
-//     console.log(data);
-// });
+d3.json(all_results).then(data => {
+    console.log(data);
+});

@@ -149,6 +149,16 @@ function getData(data) {
     });
 }
 
+function getData(_data) {
+    return _data.map(function(country, i) {
+        return {
+            name: country[0],
+            y: country[1],
+            color: countries[i].color
+        };
+    });
+}
+
 var chart = Highcharts.chart('medalbar', {
     chart: {
         type: 'column'
@@ -255,5 +265,38 @@ years.forEach(function(year) {
         }, true, false, {
             duration: 800
         });
+    });
+});
+// bring in cleaned olympic medal data from flask app
+
+
+d3.json("api/medals").then((_data) => {
+    console.log(_data);
+});
+series = [{
+    name: '2016',
+    data: []
+}, {
+    name: '2012',
+    data: []
+}, {
+    name: '2008',
+    data: []
+}, {
+    name: '2004',
+    data: []
+}, {
+    name: '2000',
+    data: []
+}];
+
+medalcount.forEach(point => {
+    series.forEach(series => {
+        if (series.year === medalcount.year) {
+            series.data.push({
+                x: new Date(medalcount.year).getTime(),
+                y: point.Value
+            })
+        }
     });
 });
