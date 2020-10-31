@@ -164,10 +164,10 @@ var chart = Highcharts.chart('medalbar', {
         type: 'column'
     },
     title: {
-        text: 'Summer Olympics 2016 - Top 5 countries by Gold medals'
+        text: 'Olympics 2016 - Top 5 Countries by Medal Count'
     },
     subtitle: {
-        text: 'Comparing to results from Summer Olympics 2012 - Source: <ahref="https://en.wikipedia.org/wiki/2016_Summer_Olympics_medal_table">Wikipedia</a>'
+        text: 'Comparing to results from Olympics 2012 - Source: <ahref="https://en.wikipedia.org/wiki/2016_Summer_Olympics_medal_table">Wikipedia</a>'
     },
     plotOptions: {
         series: {
@@ -250,10 +250,10 @@ years.forEach(function(year) {
 
         chart.update({
             title: {
-                text: 'Winter Olympics ' + year + ' - Top 5 countries by Gold medals'
+                text: 'Olympics ' + year + ' - Top 5 Countries by Medal Count'
             },
             subtitle: {
-                text: 'Comparing to results from Summer Olympics ' + (year - 4) + ' - Source: <ahref="https://en.wikipedia.org/wiki/' + (year) + '_Summer_Olympics_medal_table">Wikipedia</a>'
+                text: 'Comparing to results from Olympics ' + (year - 4) + ' - Source: <ahref="https://en.wikipedia.org/wiki/' + (year) + '_Summer_Olympics_medal_table">Wikipedia</a>'
             },
             series: [{
                 name: year - 4,
@@ -300,3 +300,42 @@ medalcount.forEach(point => {
         }
     });
 });
+
+// let medalData = d3.json("api/medals").then((data) => {
+//     console.log(data);
+
+//     series = [{
+//         name: '2016',
+//         data: []
+//     }, {
+//         name: '2012',
+//         data: []
+//     }, {
+//         name: '2008',
+//         data: []
+//     }, {
+//         name: '2004',
+//         data: []
+//     }];
+
+//     data.forEach(point => {
+//         series.forEach(series => {
+//             if (series.name === point.year) {
+//                 series.data.push({
+//                     x: new year(point.year),
+//                     y: point.medal
+//                 })
+//             }
+//         });
+//     });
+
+//     Highcharts.chart('medalbar', {
+
+//         xAxis: {
+//             type: 'datetime'
+//         },
+
+//         series: series
+
+//     });
+// });
