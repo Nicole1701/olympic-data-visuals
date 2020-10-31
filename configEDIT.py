@@ -1,1 +1,0 @@
-POSTGRES_LINK = "postgresql://postgres:[PASSWORD]@localhost:5432/[DBNAME]"
