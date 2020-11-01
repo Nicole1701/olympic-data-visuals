@@ -123,6 +123,6 @@ d3.json(link).then(data => {
     }).addTo(myMap);
 });
 
-d3.json(all_results).then(data => {
-    console.log(data);
-});
+// d3.json(all_results).then(data => {
+//     console.log(data);
+// });
