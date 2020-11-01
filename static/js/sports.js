@@ -40,7 +40,7 @@ Highcharts.chart('sports-container', {
             text: 'Years',
             style: {
                 fontSize: '26px'
-            }
+                }
         },
         labels: {
             style: {
