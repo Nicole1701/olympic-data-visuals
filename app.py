@@ -149,11 +149,9 @@ def medalsapi():
 
 
 ################## Sports ##################
-
 @app.route('/sports')
 def sports():
     return render_template('sports.html')
-
 
 @app.route('/api/sports')
 def sportsapi():
@@ -176,9 +174,56 @@ def sportsapi():
         item_dict["sport"] = item[2]
         all_results.append(item_dict)
 
-
     return jsonify(all_results)
 
+
+# @app.route('/api/sports/summer')
+# def sportsapiSummer():
+#     session = Session(engine)
+
+#     results = session.query(AthleteData.year, AthleteData.season, func.count(AthleteData.sport.distinct())).\
+#         distinct(AthleteData.year, AthleteData.season).\
+#         filter(AthleteData.season == 'Summer').\
+#         group_by(AthleteData.year, AthleteData.season).\
+#         order_by(AthleteData.year).all()
+
+#     session.close()
+
+#    # Create a dictionary from the row data and append to a list of all_results
+#     all_results = []
+#     for item in results:
+#         item_dict = {}
+#         item_dict["year"] = item[0]
+#         item_dict["season"] = item[1]
+#         item_dict["sport"] = item[2]
+#         all_results.append(item_dict)
+
+#     return jsonify(all_results)
+
+
+# @app.route('/api/sports/winter')
+# def sportsapiWinter():
+#     session = Session(engine)
+
+#     results = session.query(AthleteData.year, AthleteData.season, func.count(AthleteData.sport.distinct())).\
+#         distinct(AthleteData.year, AthleteData.season).\
+#         filter(AthleteData.season == 'Winter').\
+#         group_by(AthleteData.year, AthleteData.season).\
+#         order_by(AthleteData.year).all()
+
+#     session.close()
+
+#    # Create a dictionary from the row data and append to a list of all_results
+#     all_results = []
+#     for item in results:
+#         item_dict = {}
+#         item_dict["year"] = item[0]
+#         item_dict["season"] = item[1]
+#         item_dict["sport"] = item[2]
+#         all_results.append(item_dict)
+
+
+#     return jsonify(all_results)
 
 ################## Data ##################
 
