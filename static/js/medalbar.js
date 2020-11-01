@@ -270,9 +270,9 @@ years.forEach(function(year) {
 // bring in cleaned olympic medal data from flask app
 
 
-d3.json("api/medals").then((_data) => {
-    console.log(_data);
-});
+// d3.json("api/medals").then((_data) => {
+//     console.log(_data);
+// });
 series = [{
     name: '2016',
     data: []
@@ -290,16 +290,16 @@ series = [{
     data: []
 }];
 
-medalcount.forEach(point => {
-    series.forEach(series => {
-        if (series.year === medalcount.year) {
-            series.data.push({
-                x: new Date(medalcount.year).getTime(),
-                y: point.Value
-            })
-        }
-    });
-});
+// medalyear.forEach(point => {
+//     series.forEach(series => {
+//         if (series.year === medalyear.year) {
+//             series.data.push({
+//                 x: new Date(medalcount.year).getTime(),
+//                 y: point.Value
+//             })
+//         }
+//     });
+// });
 
 // let medalData = d3.json("api/medals").then((data) => {
 //     console.log(data);
@@ -339,3 +339,28 @@ medalcount.forEach(point => {
 
 //     });
 // });
+
+//** group API return by year https://learnwithparam.com/blog/how-to-group-by-array-of-objects-using-a-key/ ** */
+const groupBy = (array, key) => {
+    // Return the end result
+    return array.reduce((result, currentValue) => {
+        // If an array already present for key, push it to the array. Else create an array and push the object
+        (result[currentValue[key]] = result[currentValue[key]] || []).push(
+            currentValue
+        );
+        // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
+        return result;
+    }, {}); // empty object is the initial value for result object
+};
+
+d3.json("api/medals").then((data) => {
+    console.log(data)
+    const medalyear = groupBy(data, "year")
+    console.log(medalyear)
+
+    // Accepts the array and key
+
+
+    // Group by color as key to the person array
+    // const personGroupedByColor = groupBy(person, 'color');
+});
