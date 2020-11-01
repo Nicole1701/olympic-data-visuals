@@ -479,197 +479,6 @@ section {
 }
 
 /*--------------------------------------------------------------
-# What We Do
---------------------------------------------------------------*/
-
-.summary .icon-box {
-  text-align: center;
-  padding: 30px 20px;
-  transition: all ease-in-out 0.3s;
-  background: #fff;
-}
-
-.summary .icon-box .icon {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  background: #eaf4fb;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: ease-in-out 0.3s;
-}
-
-.summary .icon-box .icon i {
-  color: #3498db;
-  font-size: 28px;
-}
-
-.summary .icon-box h4 {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 24px;
-}
-
-.summary .icon-box h4 a {
-  color: #384046;
-  transition: ease-in-out 0.3s;
-}
-
-.summary .icon-box p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.summary .icon-box:hover {
-  border-color: #fff;
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-}
-
-.summary .icon-box:hover h4 a,
-.summary .icon-box:hover .icon i {
-  color: #3498db;
-}
-
-/*--------------------------------------------------------------
-# Visuals
---------------------------------------------------------------*/
-
-.visuals .icon-box {
-  padding: 30px;
-  border-radius: 6px;
-  background: #fff;
-  transition: ease-in-out 0.3s;
-}
-
-.visuals .icon-box i {
-  float: left;
-  color: #3498db;
-  font-size: 40px;
-}
-
-.visuals .icon-box h4 {
-  margin-left: 70px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.visuals .icon-box h4 a {
-  color: #384046;
-  transition: 0.3s;
-}
-
-.visuals .icon-box p {
-  margin-left: 70px;
-  line-height: 24px;
-  font-size: 14px;
-}
-
-.visuals .icon-box:hover {
-  box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
-}
-
-.visuals .icon-box:hover h4 a {
-  color: #3498db;
-}
-
-/* Highcharts MedalBar */
-
-#container {
-  min-width: 310px;
-  max-width: 800px;
-  height: 400px;
-  margin: 0 auto;
-}
-
-.buttons {
-  min-width: 310px;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 0;
-}
-
-.buttons button {
-  cursor: pointer;
-  border: 1px solid silver;
-  border-right-width: 0;
-  background-color: #f8f8f8;
-  font-size: 1rem;
-  padding: 0.5rem;
-  outline: none;
-  transition-duration: 0.3s;
-}
-
-.buttons button:first-child {
-  border-top-left-radius: 0.3em;
-  border-bottom-left-radius: 0.3em;
-}
-
-.buttons button:last-child {
-  border-top-right-radius: 0.3em;
-  border-bottom-right-radius: 0.3em;
-  border-right-width: 1px;
-}
-
-.buttons button:hover {
-  color: white;
-  background-color: rgb(158, 159, 163);
-  outline: none;
-}
-
-.buttons button.active {
-  background-color: #0051b4;
-  color: white;
-}
-
-/*--------------------------------------------------------------
-# Inner page
---------------------------------------------------------------*/
-
-.inner .icon-box {
-  padding: 30px;
-  border-radius: 6px;
-  background: #fff;
-  transition: ease-in-out 0.3s;
-}
-
-.inner .icon-box i {
-  float: left;
-  color: #3498db;
-  font-size: 40px;
-}
-
-.inner .icon-box h4 {
-  margin-left: 70px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.inner .icon-box h4 a {
-  color: #384046;
-  transition: 0.3s;
-}
-
-.inner .icon-box p {
-  margin-left: 70px;
-  line-height: 24px;
-  font-size: 14px;
-}
-
-.inner .icon-box:hover {
-  box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
-}
-
-.inner .icon-box:hover h4 a {
-  color: #3498db;
-}
-
-/*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
 
@@ -880,7 +689,8 @@ section {
 .highcharts-data-table table {
   min-width: 360px;
   max-width: 800px;
-  margin: 1em auto;
+  margin: 0 auto;
+  box-align: "center";
 }
 
 .highcharts-data-table table {
@@ -912,4 +722,44 @@ section {
 }
 .highcharts-data-table tr:hover {
   background: #f1f7ff;
+}
+
+.buttons {
+  min-width: 310px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0;
+}
+
+.buttons button {
+  cursor: pointer;
+  border: 1px solid silver;
+  border-right-width: 0;
+  background-color: #f8f8f8;
+  font-size: 1rem;
+  padding: 0.5rem;
+  outline: none;
+  transition-duration: 0.3s;
+}
+
+.buttons button:first-child {
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+}
+
+.buttons button:last-child {
+  border-top-right-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
+  border-right-width: 1px;
+}
+
+.buttons button:hover {
+  color: white;
+  background-color: rgb(158, 159, 163);
+  outline: none;
+}
+
+.buttons button.active {
+  background-color: #0051b4;
+  color: white;
 }
