@@ -237,7 +237,7 @@ var realData =
             },
             yAxis: [{
                 title: {
-                    text: 'Gold medals'
+                    text: 'Total Medals Brought Home'
                 },
                 showFirstLabel: false
             }],
@@ -302,35 +302,35 @@ var realData =
         // bring in cleaned olympic medal data from flask app
 
 
-        // d3.json("/api/medals/top").then((data) => {
-        //     console.log(data);
-        //     const topmedalyear = groupBy(data, "year")
-        //     console.log(topmedalyear)
-        // });
-        // series = [{
-        //     name: '2016',
-        //     data: []
-        // }, {
-        //     name: '2012',
-        //     data: []
-        // }, {
-        //     name: '2008',
-        //     data: []
-        // }, {
-        //     name: '2004',
-        //     data: []
-        // }];
+        d3.json("/api/medals/top").then((data) => {
+            console.log(data);
+            const topmedalyear = groupBy(data, "year")
+            console.log(topmedalyear)
+        });
+        series = [{
+            name: '2016',
+            data: []
+        }, {
+            name: '2012',
+            data: []
+        }, {
+            name: '2008',
+            data: []
+        }, {
+            name: '2004',
+            data: []
+        }];
 
-        // data.forEach(point => {
-        //     series.forEach(series => {
-        //         if (series.year === data.year) {
-        //             series.data.push({
-        //                 x: new Date(medalcount.year).getTime(),
-        //                 y: point.Value
-        //             })
-        //         }
-        //     });
-        // });
+        topmedalyear.forEach(point => {
+            series.forEach(series => {
+                if (series.year === data.year) {
+                    series.data.push({
+                        x: new Date(medalcount.year).getTime(),
+                        y: point.Value
+                    })
+                }
+            });
+        });
 
         // let medalData = d3.json("api/medals").then((data) => {
         //     console.log(data);
