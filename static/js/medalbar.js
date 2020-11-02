@@ -21,8 +21,7 @@ var medal_year = d3.json("api/medals").then((data) => {
     // console.log(medalyearorder)
 
 
-    // Group by color as key to the person array
-    // const personGroupedByColor = groupBy(person, 'color');
+
 });
 var realData =
     d3.json("api/medals").then((data) => {
@@ -30,101 +29,100 @@ var realData =
         const medalyear = groupBy(data, "year")
         console.log(medalyear);
         // console.log(realData);
-
         var dataPrev = {
             2016: [
-                ['South Korea', 0],
-                ['Japan', 0],
-                ['Australia', 0],
-                ['Germany', 11],
-                ['Russia', 24],
-                ['China', 38],
-                ['Great Britain', 29],
-                ['United States', 46]
+                ['South Korea', 26],
+                ['Japan', 64],
+                ['Australia', 82],
+                ['Germany', 159],
+                ['Russia', 115],
+                ['China', 113],
+                ['Great Britain', 145],
+                ['United States', 264]
             ],
             2012: [
-                ['South Korea', 13],
-                ['Japan', 0],
-                ['Australia', 0],
-                ['Germany', 0],
-                ['Russia', 22],
-                ['China', 51],
-                ['Great Britain', 19],
-                ['United States', 36]
+                ['South Korea', 61],
+                ['Japan', 84],
+                ['Australia', 114],
+                ['Germany', 94],
+                ['Russia', 140],
+                ['China', 125],
+                ['Great Britain', 126],
+                ['United States', 248]
             ],
             2008: [
-                ['South Korea', 0],
-                ['Japan', 0],
-                ['Australia', 0],
-                ['Germany', 13],
-                ['Russia', 27],
-                ['China', 32],
-                ['Great Britain', 9],
-                ['United States', 37]
+                ['South Korea', 78],
+                ['Japan', 51],
+                ['Australia', 149],
+                ['Germany', 99],
+                ['Russia', 142],
+                ['China', 184],
+                ['Great Britain', 81],
+                ['United States', 317]
             ],
             2004: [
-                ['South Korea', 0],
-                ['Japan', 5],
-                ['Australia', 16],
-                ['Germany', 0],
-                ['Russia', 32],
-                ['China', 28],
-                ['Great Britain', 0],
-                ['United States', 36]
+                ['South Korea', 52],
+                ['Japan', 93],
+                ['Australia', 157],
+                ['Germany', 149],
+                ['Russia', 27],
+                ['China', 94],
+                ['Great Britain', 57],
+                ['United States', 263]
             ],
             2000: [
                 ['South Korea', 0],
                 ['Japan', 0],
-                ['Australia', 9],
-                ['Germany', 20],
-                ['Russia', 26],
-                ['China', 16],
+                ['Australia', 16],
+                ['Germany', 13],
+                ['Russia', 32],
+                ['China', 28],
                 ['Great Britain', 0],
-                ['United States', 44]
+                ['United States', 36]
             ]
         };
 
         var data = {
 
             2016: [
-                ['South Korea', 0],
-                ['Japan', 0],
-                ['Australia', 0],
-                ['Germany', 17],
-                ['Russia', 19],
-                ['China', 26],
-                ['Great Britain', 27],
-                ['United States', 46]
+                ['South Korea', 26],
+                ['Japan', 64],
+                ['Australia', 82],
+                ['Germany', 159],
+                ['Russia', 115],
+                ['China', 113],
+                ['Great Britain', 145],
+                ['United States', 264]
             ],
             2012: [
-                ['South Korea', 13],
-                ['Japan', 0],
-                ['Australia', 0],
-                ['Germany', 0],
-                ['Russia', 24],
-                ['China', 38],
-                ['Great Britain', 29],
-                ['United States', 46]
+                ['South Korea', 61],
+                ['Japan', 84],
+                ['Australia', 114],
+                ['Germany', 94],
+                ['Russia', 140],
+                ['China', 125],
+                ['Great Britain', 126],
+                ['United States', 248]
             ],
             2008: [
-                ['South Korea', 0],
-                ['Japan', 0],
-                ['Australia', 0],
-                ['Germany', 16],
-                ['Russia', 22],
-                ['China', 51],
-                ['Great Britain', 19],
-                ['United States', 36]
+                ['South Korea', 78],
+                ['Japan', 51],
+                ['Australia', 149],
+                ['Germany', 99],
+                ['Russia', 142],
+                ['China', 184],
+                ['Great Britain', 81],
+                ['United States', 317]
             ],
             2004: [
-                ['South Korea', 0],
-                ['Japan', 16],
-                ['Australia', 17],
-                ['Germany', 0],
+                ['South Korea', 52],
+                ['Japan', 93],
+                ['Australia', 157],
+                ['Germany', 149],
                 ['Russia', 27],
-                ['China', 32],
-                ['Great Britain', 0],
-                ['United States', 37]
+                ['China', 94],
+                ['Great Britain', 57],
+                ['United States', 263]
             ],
             2000: [
                 ['South Korea', 0],
@@ -304,29 +302,28 @@ var realData =
         // bring in cleaned olympic medal data from flask app
 
 
-        // d3.json("api/medals").then((_data) => {
-        //     console.log(_data);
+        // d3.json("/api/medals/top").then((data) => {
+        //     console.log(data);
+        //     const topmedalyear = groupBy(data, "year")
+        //     console.log(topmedalyear)
         // });
-        series = [{
-            name: '2016',
-            data: []
-        }, {
-            name: '2012',
-            data: []
-        }, {
-            name: '2008',
-            data: []
-        }, {
-            name: '2004',
-            data: []
-        }, {
-            name: '2000',
-            data: []
-        }];
+        // series = [{
+        //     name: '2016',
+        //     data: []
+        // }, {
+        //     name: '2012',
+        //     data: []
+        // }, {
+        //     name: '2008',
+        //     data: []
+        // }, {
+        //     name: '2004',
+        //     data: []
+        // }];
 
-        // medalyear.forEach(point => {
+        // data.forEach(point => {
         //     series.forEach(series => {
-        //         if (series.year === medalyear.year) {
+        //         if (series.year === data.year) {
         //             series.data.push({
         //                 x: new Date(medalcount.year).getTime(),
         //                 y: point.Value
