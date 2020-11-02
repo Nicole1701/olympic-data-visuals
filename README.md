@@ -172,7 +172,7 @@ Note: Games were interrupted for World Wars I and II.
 
 - Multiple leaflet, plotly or other d3-wrapper-type visualizations that update from the same data source
 
-      	 **Multiple visualizations are included to cover three different areas of the Olympic Games**
+  **Multiple visualizations are included to cover three different areas of the Olympic Games**
 
 3. Your website's dataset can come from:
 
@@ -180,7 +180,7 @@ Note: Games were interrupted for World Wars I and II.
 
 - Web scraping, API calls, or csv's that have ben ETL'd into your database, and live API calls
 
-      	**One large dataset was found on  [Kaggle](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results/home) and then combined with a [smaller dataset](https://www.kaggle.com/paultimothymooney/latitude-and-longitude-for-every-country-and-state) to append country names to the file.**
+  **One large dataset was found on [Kaggle](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results/home) and then combined with a [smaller dataset](https://www.kaggle.com/paultimothymooney/latitude-and-longitude-for-every-country-and-state) to append country names to the file.**
 
 4. Your website must include at least one JavaScript library we did not cover in class. See below for suggestions:
 
@@ -191,6 +191,7 @@ Note: Games were interrupted for World Wars I and II.
 - The user must be able to dynamically change some aspect of the page
 
 - You can accomplish this with inputs, buttons or menus
+
   **The legends on the gender charts add/remove data upon click**
   **The legends on the sports charts filter the data by season upon click**
   **The medals Top 5 chart will change the data upon button click**
@@ -201,4 +202,4 @@ Note: Games were interrupted for World Wars I and II.
 
 - If you've built a dashboard of multiple visualizations, have at least three different visualizations that can be plots, charts, graphs or maps. You still have to work in some interactivity, though.
 
-**Multiple charts were created for this project**
+  **Multiple charts were created for this project**
