@@ -140,34 +140,16 @@ legend: {
  
 });
 
-let seasons = ['Summer', 'Winter'];
 
-seasons.forEach(function (season) {
-    var btn = document.getElementById(year);
+//  // The button action
+//  $('#summer').click(function() {
+//   summerData.series[0].setData(summerData);
+//   $(this).attr('disabled', true);
+//   $('#summer').attr('disabled', false);
+// });
 
-    btn.addEventListener('click', function () {
-
-        document.querySelectorAll('.buttons button.active').forEach(function (active) {
-            active.className = '';
-        });
-        btn.className = 'active';
-
-        chart.update({
-            title: {
-                text: 'Summer Olympics ' + year + ' - Top 5 countries by Gold medals'
-            },
-            subtitle: {
-                text: 'Comparing to results from Summer Olympics ' + (year - 4) + ' - Source: <ahref="https://en.wikipedia.org/wiki/' + (year) + '_Summer_Olympics_medal_table">Wikipedia</a>'
-            },
-            series: [{
-                name: year - 4,
-                data: dataPrev[year].slice()
-            }, {
-                name: year,
-                data: getData(data[year]).slice()
-            }]
-        }, true, false, {
-            duration: 800
-        });
-    });
-});
+// $('#winter').click(function() {
+//   winterData.series[0].setData(winterData);
+//   $(this).attr('disabled', true);
+//   $('#winter').attr('disabled', false);
+// });
