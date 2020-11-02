@@ -2,7 +2,7 @@ A Look At The Olympics (1896-2016)
 
 ![Olympic Rings](static/images/olympic_rings.png)
 
-## Project Contributors
+# Project Contributors
 
 - [Kristy Anderson](https://github.com/kristyski)
 
@@ -98,32 +98,29 @@ its somewhat humble beginnings. We wanted to see exactly how much the games have
 number of athletes, the number of sports included and how the gender makeup of the Games has changed over
 the last 120 years.
 
-#### Gender
+#### <u>Gender</u>
 
 **Is there a difference in the gender make up of Olympic athletes over time?**
 
-<h4><u>Summer Olympics</u></h4>
-
+<u>Summer Olympics</u>
 Women competed in the Olmypics for the first time in the Summer Games of 1900 with a total of 23 female athletes competing across 5 different sports: Croquet, Equestrianism, Golf, Sailing and Tennis. That year they brought home 13 medals: 4 Gold, 4 Silver and 5 Bronze.
 
 That first year they made up less than 2% of all athletes, but over time their numbers have steadily increased and in 2016 they made up about 45% of total competitors and participated in 34 different sports.
 
 The number of male athletes competing has also increased steadily from only 176 in 1896 to 6129 in 2016 across 32 different sports.
 
-<h5><u>Winter Olympics</u></h5>
-
+<u>Winter Olympics</u>
 In the Winter Olympics in 1924, only 13 women participated (4%), all of which competed in Figure Skating (both Mixed Pairs and Women's Singles). Their numbers steadily increased and by 2014 they made up 40% of all participants across 14 different sports.
 
 The number of male athletes competing has similarly increased over the years and by 2014 their participation grew from 300 men competing across 10 sports to 1643 across 15 sports.
 
-#### Medals
+#### <u>Medals</u>
 
-- What is the break out of gold/total medals won by country? What are the top 5 countries in total medals over the last 4 summer Olympics?
+**What is the break out of gold/total medals won by country? What are the top 5 countries in total medals over the last 4 summer Olympics?**
 
-#### Sports
+#### <u>Sports</u>
 
-- Have the number of official sports included in the Olympics changed over time?
-<p>
+**Have the number of official sports included in the Olympics changed over time?**
 
 The first modern Olympic Games, held in April 1896 in Athens, Greece, showcased 9 sports. The next games, held four years later, were when the reference to 'Summer' began. Winter games began in 1924, were held in Chamonix, France and showcased 10 events.
 
