@@ -115,8 +115,14 @@ In the Winter Olympics in 1924, only 13 women participated (4%), all of which co
 The number of male athletes competing has similarly increased over the years and by 2014 their participation grew from 300 men competing across 10 sports to 1643 across 15 sports.
 
 ### <u>Medals</u>
+**How many medals are actually brought home by each country?**
+Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.
 
-**What is the break out of gold/total medals won by country? What are the top 5 countries in total medals over the last 4 summer Olympics?**
+
+When a team wins an Olympic team event, all team members win a medal for their country including reserve and alternate team members as well. An example of this is the 2016 Olympics and the U.S. The U.S. brought home 121 medals for the country, however if you count every medal that was brought home in 2016, the U.S. collected a total of 264 medals.
+
+
+The top five countries in total medals (counting all team members’ medals) for the last four Summer Olympics show that the U.S. consistently brings home significantly more medals than the second place team (40% more medals than Australia in 2004, 42% more medals than China in 2008, 43% more medals than Russia in 2012, and 39% more medals than Germany in 2016).
 
 ### <u>Sports</u>
 
