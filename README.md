@@ -103,16 +103,16 @@ the last 120 years.
 **Is there a difference in the gender make up of Olympic athletes over time?**
 
 <u>Summer Olympics</u><br />
-Women competed in the Olmypics for the first time in the Summer Games of 1900 with a total of 23 female athletes competing across 5 different sports: Croquet, Equestrianism, Golf, Sailing and Tennis. That year they brought home 13 medals: 4 Gold, 4 Silver and 5 Bronze.
+Women competed in the Olympics for the first time in the Summer Games of 1900 with a total of 23 athletes competing across 5 different sports: Croquet, Equestrianism, Golf, Sailing and Tennis. That year they brought home 13 medals: 4 Gold, 4 Silver and 5 Bronze.
 
-That first year they made up less than 2% of all athletes, but over time their numbers have steadily increased and in 2016 they made up about 45% of total competitors and participated in 34 different sports.
+That first year, they made up less than 2% of all athletes, but over time their numbers have steadily increased and by 2016, they made up about 45% of total competitors and participated in 34 different sports.
 
 The number of male athletes competing has also increased steadily from only 176 in 1896 to 6129 in 2016 across 32 different sports.
 
 <u>Winter Olympics</u><br />
-In the Winter Olympics in 1924, only 13 women participated (4%), all of which competed in Figure Skating (both Mixed Pairs and Women's Singles). Their numbers steadily increased and by 2014 they made up 40% of all participants across 14 different sports.
+In the Winter Olympics in 1924, only 13 women participated (4%), all of which competed in Figure Skating (both Mixed Pairs and Women's Singles). As with the Summer Olympics, their numbers steadily increased, and by 2014 they made up 40% of all participants across 14 different sports.
 
-The number of male athletes competing has similarly increased over the years and by 2014 their participation grew from 300 men competing across 10 sports to 1643 across 15 sports.
+The number of male athletes competing has similarly increased over the years and by 2014 their participation grew from 300 men competing across 10 sports to 1643 men competing across 15 different sports.
 
 ### <u>Medals</u>
 
