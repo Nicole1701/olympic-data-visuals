@@ -117,7 +117,7 @@ d3.json(link).then(data => {
                 }
             });
             // Giving each feature a pop-up with information pertinent to it
-            layer.bindPopup(`<h3>${feature.properties.ADMIN}</h3> <hr> <h4>264 Total Medals in 2016</h4>`);
+            layer.bindPopup(`<h3>${feature.properties.ADMIN}</h3> <hr> <h4>264 Total Medals brought home by athletes in 2016</h4><hr><h4>121 Medals counted for the country in 2016 (</h4>`);
 
         }
     }).addTo(myMap);
