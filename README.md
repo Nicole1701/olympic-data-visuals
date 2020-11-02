@@ -1,4 +1,4 @@
-A Look At The Olympics (1896-2016)
+# A Look At The Olympics (1896-2016)
 
 ![Olympic Rings](static/images/olympic_rings.png)
 
