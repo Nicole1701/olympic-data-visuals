@@ -77,8 +77,8 @@ For our original project proposal, please go here: [Project Proposal](https://gi
 
 Multiple challenges cropped up during this project:
 
-- When looking at the total number of medals, our dataset includes everyone that took home a medal, including group sports. The official tallies only include one medal tally per sports as the other way may weight countries with team sports more heavily. As there is no way to easy modify this in our data set, we decided to focus on the individuals who won per country. Comparison with the official tallies, however, produced little change in the top 5 countries, so we felt this was an acceptable compromise.
-- We initially ran into some issues with the Highcharts library. Most of the example code included static data and it was a challenge to get the charts to work with a JSON API call. Due to the limited time we had to finish this project we decided to scale down some of the charts we initially wanted to include. Given more time, we are confident we could have adapted to most of the charts available in this library.
+- When looking at the total number of medals, our dataset includes everyone that took home a medal, including everyone who participated in a group sport. The official tallies only include one medal tally per sport, as the other way may weight countries who participate in more team sports more heavily. As there is no way to easy modify this in our data set, we decided to focus on the individuals who won per country. We compared our rankings with the official tallies, however, and saw that it produced little variation in the top 5 countries, so we felt this was an acceptable compromise.
+- We initially ran into some issues with the Highcharts library. Most of the example code included static data and it was a challenge to get the charts to work with a JSON API call. Due to the limited time we had to finish this project, we decided to scale down some of the charts we initially wanted to include. Given more time, we are confident we could have adapted to most of the charts available in this library.
 - We initially wanted to deploy our app to [Heroku](https://www.heroku.com/), but our data set was too large to qualify for the free account, so it was decided to just leave our site in the app.py file.
 
 <hr>
@@ -192,9 +192,9 @@ Note: Games were interrupted for World Wars I and II.
 
 - You can accomplish this with inputs, buttons or menus
 
-  **The legends on the gender charts add/remove data upon click**
-  **The legends on the sports charts filter the data by season upon click**
-  **The medals Top 5 chart will change the data upon button click**
+  **The legends on the gender charts add/remove data upon click**<br />
+  **The legends on the sports charts filter the data by season upon click**<br />
+  **The medals Top 5 chart will change the data upon button click**<br />
 
 6. Your website should allow for three distinct views of your data:
 
