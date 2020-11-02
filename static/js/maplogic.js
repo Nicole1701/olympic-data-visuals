@@ -117,7 +117,7 @@ d3.json(link).then(data => {
                 }
             });
             // Giving each feature a pop-up with information pertinent to it
-            layer.bindPopup(`<h3>${feature.properties.ADMIN}</h3> <hr> <h4>Api call from flask app.py route /medals</h4>`);
+            layer.bindPopup(`<h3>${feature.properties.ADMIN}</h3> <hr> <h4>264 Total Medals in 2016</h4>`);
 
         }
     }).addTo(myMap);
