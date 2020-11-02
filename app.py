@@ -147,6 +147,22 @@ def medalsapi():
 
     return jsonify(all_results)
 
+@app.route('/api/medals/top')
+def medalstopapi():
+    session = Session(engine)
+    results = session.query(AthleteData.country, AthleteData.year, func.count(AthleteData.medal)).\
+        filter(AthleteData.medal != 'None', AthleteData.year >= '2004', AthleteData.noc.in_(('USA','GER','GBR','RUS','CHN','AUS','ITA'))).\
+        group_by(  AthleteData.country, AthleteData.year).all()
+    session.close()
+   # Create a dictionary from the row data and append to a list of all_results
+    all_results = []
+    for item in results:
+        item_dict = {}
+        item_dict["country"] = item[0]
+        item_dict["year"] = item[1]
+        item_dict["medal"] = item[2]
+        all_results.append(item_dict)
+    return jsonify(all_results)
 
 ################## Sports ##################
 @app.route('/sports')
