@@ -65,6 +65,8 @@ For our original project proposal, please go here: [Project Proposal](https://gi
 
 - The athlete data cleaned for duplicates
 - The NOC data was used to add a country name to the file based on NOC code
+- ERD design:<br />
+  ![ERD](static/images/OlympicDB_ERD.jpeg)
 
 ### Considerations
 
@@ -122,7 +124,6 @@ The number of male athletes competing has similarly increased over the years and
 
 Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.
 
-
 **How many medals are actually brought home by each country?**<br />
 
 Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.
@@ -159,7 +160,11 @@ Note: Games were interrupted for World Wars I and II.
 
 #### Medals Map
 
+![Medals Map](static/images/map.PNG)
+
 #### Medals Top 5
+
+![Medals Top 5](static/images/olympics-2016-top-5-coun.png)
 
 #### Sports
 
