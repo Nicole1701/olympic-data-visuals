@@ -69,17 +69,8 @@ var realData =
                 ['China', 94],
                 ['Great Britain', 57],
                 ['United States', 263]
-            ],
-            2000: [
-                ['South Korea', 0],
-                ['Japan', 0],
-                ['Australia', 16],
-                ['Germany', 13],
-                ['Russia', 32],
-                ['China', 28],
-                ['Great Britain', 0],
-                ['United States', 36]
             ]
+            
         };
 
         var data = {
@@ -123,17 +114,8 @@ var realData =
                 ['China', 94],
                 ['Great Britain', 57],
                 ['United States', 263]
-            ],
-            2000: [
-                ['South Korea', 0],
-                ['Japan', 0],
-                ['Australia', 16],
-                ['Germany', 13],
-                ['Russia', 32],
-                ['China', 28],
-                ['Great Britain', 0],
-                ['United States', 36]
             ]
+            
         };
 
         var countries = [{
@@ -268,7 +250,7 @@ var realData =
             }
         });
 
-        var years = [2016, 2012, 2008, 2004, 2000];
+        var years = [2016, 2012, 2008, 2004];
 
         years.forEach(function(year) {
             var btn = document.getElementById(year);
@@ -302,35 +284,35 @@ var realData =
         // bring in cleaned olympic medal data from flask app
 
 
-        d3.json("/api/medals/top").then((data) => {
-            console.log(data);
-            const topmedalyear = groupBy(data, "year")
-            console.log(topmedalyear)
-        });
-        series = [{
-            name: '2016',
-            data: []
-        }, {
-            name: '2012',
-            data: []
-        }, {
-            name: '2008',
-            data: []
-        }, {
-            name: '2004',
-            data: []
-        }];
+        // d3.json("/api/medals/top").then((data) => {
+        //     console.log(data);
+        //     const topmedalyear = groupBy(data, "year")
+        //     console.log(topmedalyear)
+        // });
+        // series = [{
+        //     name: '2016',
+        //     data: []
+        // }, {
+        //     name: '2012',
+        //     data: []
+        // }, {
+        //     name: '2008',
+        //     data: []
+        // }, {
+        //     name: '2004',
+        //     data: []
+        // }];
 
-        topmedalyear.forEach(point => {
-            series.forEach(series => {
-                if (series.year === data.year) {
-                    series.data.push({
-                        x: new Date(medalcount.year).getTime(),
-                        y: point.Value
-                    })
-                }
-            });
-        });
+        // topmedalyear.forEach(point => {
+        //     series.forEach(series => {
+        //         if (series.year === data.year) {
+        //             series.data.push({
+        //                 x: new Date(medalcount.year).getTime(),
+        //                 y: point.Value
+        //             })
+        //         }
+        //     });
+        // });
 
         // let medalData = d3.json("api/medals").then((data) => {
         //     console.log(data);
