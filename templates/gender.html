@@ -22,11 +22,6 @@
 <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
 
-<!-- High Charts -->
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
   <!-- Template Main CSS File -->
   <link href="../static/css/gender.css" rel="stylesheet">
@@ -83,21 +78,28 @@
             <li>Gender</li>
           </ol>
         </div>
-
       </div>
       
     </section><!-- End Breadcrumbs -->
-
- 
-
+    <div id="viewSelectWrap" class="col-md-2 mx-auto" style='background: #f2f2f2; text-align: center;'>
+      <h5>Select Season</h5>
+      <label><input id="rdb1" type="radio" name="toggler" value="divID-1" style="cursor:pointer;" checked/>Summer</label>
+      <label><input id="rdb2" type="radio" name="toggler" value="divID-2" style="cursor:pointer;" />Winter</label>
+  </div>
+    
     <div id="container" class="col-md-8 mx-auto" style="width:100%; height:500px;">
+        <div id="divID-1" class="toHide" style="position:relative;margin-bottom:-400px;"></div>
+        <div id="divID-2" class="toHide" style="position:relative;top:-9999em;opacity:0;"></div>
     </div>
+ 
+    <!-- <div id="container" class="col-md-8 mx-auto" style="width:100%; height:500px;">
+    </div> -->
 
     <!-- ======= Project Analysis Section ======= -->
     <section id="summary" class="summary">
       <div class="container">
-        <div class="section-title">
-          <h5><u>Summer Olympics</u></h5>
+        <div class="section-title">       
+          <h5 style="color: darkblue"><u>Summer Olympics</u></h5>
           <p>
             Women competed in the Olympics for the first time in the Summer Games of 
             1900 with a total of 23 female competing across 5 different sports: Croquet,
@@ -112,20 +114,8 @@
           <p>
             The number of male athletes competing has also increased steadily from only 176 in 
             1896 to 6129 in 2016 across 32 different sports.
-          </p>
-        </div>
-      </div>
-    </section>
-    <!-- End Project Analysis Section -->
-
-    <hr>
-    <div id="w-container" class="col-md-8 mx-auto" style="width:100%; height:500px;">
-    </div>
-     <!-- ======= Project Analysis Section ======= -->
-     <section id="summary" class="summary">
-      <div class="container">
-        <div class="section-title">
-          <h5><u>Winter Olympics</u></h5>
+          </p><br />
+          <h5 style="color: darkblue"><u>Winter Olympics</u></h5>
           <p>
             In the Winter Olympics in 1924, only 13 women participated (4%), all of which competed
             in Figure Skating (both Mixed Pairs and Women's Singles). As with the Summer Olympics, their
@@ -136,6 +126,8 @@
             2014 their participation grew from 300 men competing across 10 sports to 1643 men 
             competing across 15 different sports.
           </p>
+        </div>
+      </div>
         </div>
       </div>
     </section>
@@ -182,6 +174,13 @@
   <script src="../static/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="../static/vendor/counterup/counterup.min.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+  <!-- High Charts -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
   <!-- Template Main JS File -->
   <!-- <script src="../static/js/main.js"></script> -->
