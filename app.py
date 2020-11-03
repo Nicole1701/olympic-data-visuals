@@ -108,12 +108,7 @@ def medalsapi():
     session = Session(engine)
 
     results = session.query(AthleteData.country, AthleteData.year, func.count(AthleteData.medal)).\
-<<<<<<< HEAD
-        filter(AthleteData.medal != 'None', AthleteData.year).\
-        group_by(  AthleteData.country, AthleteData.year).all()
-=======
             filter(AthleteData.medal != 'None').group_by(AthleteData.country, AthleteData.year).all()
->>>>>>> 5168e3b78a3923a1bbb69815d827ed613e42e12c
 
     session.close()
 
@@ -129,18 +124,14 @@ def medalsapi():
 
     return jsonify(all_results)
     
-@app.route('/api/medals/top')
-def medalstopapi():
+@app.route('/medals/top')
+def medalstop():
     session = Session(engine)
 
     results = session.query(AthleteData.country, AthleteData.year, func.count(AthleteData.medal)).\
         filter(AthleteData.medal != 'None', AthleteData.year >= '2004', AthleteData.noc.in_(('USA','GER','GBR','RUS','CHN','AUS','ITA'))).\
         group_by(  AthleteData.country, AthleteData.year).all()
 
-<<<<<<< HEAD
-    session.close()
-
-=======
 @app.route('/api/medals/top')
 def medalstopapi():
     session = Session(engine)
@@ -148,7 +139,6 @@ def medalstopapi():
         filter(AthleteData.medal != 'None', AthleteData.year >= '2004', AthleteData.noc.in_(('USA','GER','GBR','RUS','CHN','AUS','ITA'))).\
         group_by(  AthleteData.country, AthleteData.year).all()
     session.close()
->>>>>>> 5168e3b78a3923a1bbb69815d827ed613e42e12c
    # Create a dictionary from the row data and append to a list of all_results
     all_results = []
     for item in results:
@@ -157,11 +147,6 @@ def medalstopapi():
         item_dict["year"] = item[1]
         item_dict["medal"] = item[2]
         all_results.append(item_dict)
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 5168e3b78a3923a1bbb69815d827ed613e42e12c
     return jsonify(all_results)
 
 ################## Sports ##################
