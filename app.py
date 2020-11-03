@@ -32,6 +32,7 @@ Countries = Base.classes.noc_data
 AthleteData = Base.classes.athlete_data
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 ############################################
 ################## Routes ##################
