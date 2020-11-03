@@ -120,7 +120,7 @@ The number of male athletes competing has similarly increased over the years and
 
 **How many medals are actually brought home by each country?**
 
-<u>Counting Medals</u><br />
+<u>Counting Medals:</u><br />
 Many other Olympic medal counts in the media (e.g. ESPN, Wikipedia) only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home by each participant, which skews in favor of countries that often win team sports.
 
 When a team wins an Olympic team event, all team members win a medal for their country including reserve and alternate team members as well. An example of this is the 2016 Olympics and the U.S. The U.S. brought home 121 medals for the country, however if you count every medal that was brought home in 2016, the U.S. collected a total of 264 medals.
