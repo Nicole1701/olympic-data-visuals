@@ -64,10 +64,13 @@ function chooseColor(ADMIN) {
 }
 
 // // bring in cleaned olympic medal data from flask app
-d3.json("api/medals").then((_data) => {
+d3.json("api/medals").then((medalsdata) => {
 
-    console.log(_data);
-});
+    console.log(medalsdata);
+
+    var year = medalsdata.year
+    console.log(year)
+
 
 // mouseOn move shows pop-up with country name
 // mouseOff undo move 
@@ -122,7 +125,7 @@ d3.json(link).then(data => {
         }
     }).addTo(myMap);
 });
-
+});
 // d3.json(all_results).then(data => {
 //     console.log(data);
 // });
