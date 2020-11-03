@@ -16,7 +16,7 @@
 
 ### Set Up Environment
 
-1.  Clone this repo to you machine
+1.  Clone this repo to your machine
 2.  Open GitBash/ZSH:
     - Create a new environment using the following command:
       `conda create --name <env> python=3.6`
