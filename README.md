@@ -16,7 +16,7 @@
 
 ### Set Up Environment
 
-1.  Clone this repo to your machine
+1.  Clone this repo to your machine.
 2.  Open GitBash/ZSH:
     - Create a new environment using the following command:
       `conda create --name <env> python=3.6`
@@ -120,11 +120,7 @@ The number of male athletes competing has similarly increased over the years and
 
 **How many medals are actually brought home by each country?**
 
-<u>Counting Medals</u><br /><br />
-
-Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.
-
-**How many medals are actually brought home by each country?**<br />
+<u>Counting Medals</u><br />
 
 Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.
 
