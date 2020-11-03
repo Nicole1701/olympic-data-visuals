@@ -116,6 +116,13 @@ The number of male athletes competing has similarly increased over the years and
 
 ### <u>Medals</u>
 
+**How many medals are actually brought home by each country?**
+
+<u>Counting Medals</u><br /><br />
+
+Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.
+
+
 **How many medals are actually brought home by each country?**<br />
 
 Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.

@@ -178,7 +178,7 @@ var realData =
                 type: 'column'
             },
             title: {
-                text: 'Olympics 2016 - Top 5 Countries by Medal Count'
+                text: 'Olympics 2016 - Top 5 Countries by Total Medals Brought Home By Athletes'
             },
             subtitle: {
                 text: 'Comparing to results from Olympics 2012 - Source: <ahref="https://en.wikipedia.org/wiki/2016_Summer_Olympics_medal_table">Wikipedia</a>'
@@ -264,7 +264,7 @@ var realData =
 
                 chart.update({
                     title: {
-                        text: 'Olympics ' + year + ' - Top 5 Countries by Medal Count'
+                        text: 'Olympics ' + year + ' - Top 5 Countries by Total Medals Brought Home By Athletes'
                     },
                     subtitle: {
                         text: 'Comparing to results from Olympics ' + (year - 4) + ' - Source: <ahref="https://en.wikipedia.org/wiki/' + (year) + '_Summer_Olympics_medal_table">Wikipedia</a>'
