@@ -89,7 +89,7 @@ From the 8th century B.C. to the 4th century A.D., the ancient Olympic Games wer
 tradition in ancient Greece. Every four years, the games were held on the north-western corner of the
 Peloponnese in the honor of the god Zeus. These games have often been portrayed in movies, books and tv.
 
-The modern Olympic Games stgarted up in Athens, Greece in 1896 and continue to this day.
+The modern Olympic Games started up in Athens, Greece in 1896 and continue to this day.
 What started out as relatively small has grown into a massive undertaking and includes participation of
 thousands of athletes from all over the world.
 
@@ -115,6 +115,7 @@ In the Winter Olympics in 1924, only 13 women participated (4%), all of which co
 The number of male athletes competing has similarly increased over the years and by 2014 their participation grew from 300 men competing across 10 sports to 1643 men competing across 15 different sports.
 
 ### <u>Medals</u>
+
 **How many medals are actually brought home by each country?**
 
 <u>Counting Medals</u><br /><br />
@@ -122,14 +123,17 @@ The number of male athletes competing has similarly increased over the years and
 Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.
 
 
-When a team wins an Olympic team event, all team members win a medal for their country including reserve and alternate team members as well. An example of this is the 2016 Olympics and the U.S. The U.S. brought home 121 medals for the country, however if you count every medal that was brought home in 2016, the U.S. collected a total of 264 medals.
+**How many medals are actually brought home by each country?**<br />
 
+Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.
+
+When a team wins an Olympic team event, all team members win a medal for their country including reserve and alternate team members as well. An example of this is the 2016 Olympics and the U.S. The U.S. brought home 121 medals for the country, however if you count every medal that was brought home in 2016, the U.S. collected a total of 264 medals.
 
 The top five countries in total medals (counting all team members’ medals) for the last four Summer Olympics show that the U.S. consistently brings home significantly more medals than the second place team (40% more medals than Australia in 2004, 42% more medals than China in 2008, 43% more medals than Russia in 2012, and 39% more medals than Germany in 2016).
 
 ### <u>Sports</u>
 
-**Have the number of official sports included in the Olympics changed over time?**
+**Have the number of official sports included in the Olympics changed over time?**<br />
 
 The first modern Olympic Games, held in April 1896 in Athens, Greece, showcased 9 sports. The next games, held four years later, were when the reference to 'Summer' began. Winter games began in 1924, were held in Chamonix, France and showcased 10 events.
 
@@ -201,7 +205,7 @@ Note: Games were interrupted for World Wars I and II.
 
 - You can accomplish this with inputs, buttons or menus
 
-  **The legends on the gender charts add/remove data upon click**<br />
+  **The legends on the gender charts add/remove data upon click and season selection with radio buttons at the top**<br />
   **The legends on the sports charts filter the data by season upon click**<br />
   **The medals Top 5 chart will change the data upon button click**<br />
 

@@ -1,5 +1,21 @@
+// Add toggle to swap between winter and summer
+// jsfiddle.net/ezc7oghm/1/
 
-let summerData = d3.json("api/gender/summer").then((data) => {
+$(function() {
+  $('[name=toggler]').click(function () {
+      $('.toHide').css({
+          top: '-9999em',
+          opacity: 0
+      });
+      var chartToShow = $(this).val();
+      $('#' + chartToShow).css({
+          top: 0,
+          opacity: 1
+      });
+  });
+ 
+  // Get data for Summer Olympics
+d3.json("api/gender/summer").then((data) => {
   console.log(data);
 
   series = [{
@@ -25,7 +41,8 @@ data.forEach(point => {
   });
 });
 
-Highcharts.chart('container', {
+// Create chart for Summer Olympics
+$('#divID-1').highcharts({
   chart: {
       type: 'line'
   },
@@ -56,7 +73,7 @@ Highcharts.chart('container', {
     crosshairs: true,
     shared: true
 },
-
+// Set legend
 legend: {
   backgroundColor: '#f2f2f2',
   layout: 'horizontal',
@@ -67,10 +84,10 @@ legend: {
   series:series
 });
  
-
 });
 
-let winterData = d3.json("api/gender/winter").then((data) => {
+// Get data for Winter Olympics
+d3.json("api/gender/winter").then((data) => {
   console.log(data);
 
   series = [{
@@ -96,7 +113,8 @@ data.forEach(point => {
   });
 });
 
-Highcharts.chart('w-container', {
+// Create chart for Winter Olympics
+$('#divID-2').highcharts({
   chart: {
       type: 'line'
   },
@@ -128,6 +146,7 @@ Highcharts.chart('w-container', {
     shared: true
 },
 
+// Set legend
 legend: {
   backgroundColor: '#f2f2f2',
   layout: 'horizontal',
@@ -137,19 +156,7 @@ legend: {
 
   series:series
 });
- 
+
 });
 
-
-//  // The button action
-//  $('#summer').click(function() {
-//   summerData.series[0].setData(summerData);
-//   $(this).attr('disabled', true);
-//   $('#summer').attr('disabled', false);
-// });
-
-// $('#winter').click(function() {
-//   winterData.series[0].setData(winterData);
-//   $(this).attr('disabled', true);
-//   $('#winter').attr('disabled', false);
-// });
+}); 
