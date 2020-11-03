@@ -33,6 +33,7 @@ AthleteData = Base.classes.athlete_data
 
 app = Flask(__name__)
 
+############################################
 ################## Routes ##################
 ############################################
 
@@ -96,31 +97,6 @@ def genderWinter():
 
     return jsonify(all_results)
 
-
-@app.route('/api/gender/country')
-def gendercountry():
-    session = Session(engine)
-    
-    results = session.query(AthleteData.year, AthleteData.season, AthleteData.country,AthleteData.noc, AthleteData.sex, func.count(AthleteData.id)).\
-        distinct(AthleteData.year, AthleteData.season, AthleteData.country, AthleteData.noc, AthleteData.sex, AthleteData.id).\
-        order_by(AthleteData.year, AthleteData.noc).\
-        group_by(AthleteData.year, AthleteData.season, AthleteData.country, AthleteData.noc, AthleteData.sex, AthleteData.id).all()
-    session.close()
-
-    all_results = []
-    for item in results:
-        item_dict = {}
-        item_dict["year"] = item[0]
-        item_dict["season"] = item[1]
-        item_dict["country"] = item[2]
-        item_dict["noc"] = item[3]
-        item_dict["sex"] = item[4]
-        item_dict["count"] = item[5]
-        all_results.append(item_dict)
-
-    return jsonify(all_results)
-
-
 ################## Medals ##################
 @app.route('/medals')
 def medals():
@@ -132,8 +108,12 @@ def medalsapi():
     session = Session(engine)
 
     results = session.query(AthleteData.country, AthleteData.year, func.count(AthleteData.medal)).\
+<<<<<<< HEAD
         filter(AthleteData.medal != 'None', AthleteData.year).\
         group_by(  AthleteData.country, AthleteData.year).all()
+=======
+            filter(AthleteData.medal != 'None').group_by(AthleteData.country, AthleteData.year).all()
+>>>>>>> 5168e3b78a3923a1bbb69815d827ed613e42e12c
 
     session.close()
 
@@ -157,8 +137,18 @@ def medalstopapi():
         filter(AthleteData.medal != 'None', AthleteData.year >= '2004', AthleteData.noc.in_(('USA','GER','GBR','RUS','CHN','AUS','ITA'))).\
         group_by(  AthleteData.country, AthleteData.year).all()
 
+<<<<<<< HEAD
     session.close()
 
+=======
+@app.route('/api/medals/top')
+def medalstopapi():
+    session = Session(engine)
+    results = session.query(AthleteData.country, AthleteData.year, func.count(AthleteData.medal)).\
+        filter(AthleteData.medal != 'None', AthleteData.year >= '2004', AthleteData.noc.in_(('USA','GER','GBR','RUS','CHN','AUS','ITA'))).\
+        group_by(  AthleteData.country, AthleteData.year).all()
+    session.close()
+>>>>>>> 5168e3b78a3923a1bbb69815d827ed613e42e12c
    # Create a dictionary from the row data and append to a list of all_results
     all_results = []
     for item in results:
@@ -167,16 +157,17 @@ def medalstopapi():
         item_dict["year"] = item[1]
         item_dict["medal"] = item[2]
         all_results.append(item_dict)
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 5168e3b78a3923a1bbb69815d827ed613e42e12c
     return jsonify(all_results)
 
 ################## Sports ##################
-
 @app.route('/sports')
 def sports():
     return render_template('sports.html')
-
 
 @app.route('/api/sports')
 def sportsapi():
@@ -199,44 +190,8 @@ def sportsapi():
         item_dict["sport"] = item[2]
         all_results.append(item_dict)
 
-
     return jsonify(all_results)
 
-
-################## Data ##################
-
-@app.route("/athletesdata")
-def athletesdata():
-    return render_template('athletesdata.html')
-
-
-@app.route("/api/athletesdata")
-def athletesDataApi():
-    session = Session(engine)
-
-    results = session.query(AthleteData.noc,AthleteData.country,AthleteData.id,AthleteData.name,AthleteData.sex,AthleteData.age,AthleteData.year,AthleteData.season,AthleteData.city,AthleteData.sport,AthleteData.event,AthleteData.medal).all()
-
-    session.close()
-
-   # Create a dictionary from the row data and append to a list of all_results
-    all_results = []
-    for item in results:
-        item_dict = {}
-        item_dict["noc"] = item[0]
-        item_dict["country"] = item[1]
-        item_dict["id"] = item[2]
-        item_dict["name"] = item[3]
-        item_dict["sex"] = item[4]
-        item_dict["age"] = item[5]
-        item_dict["year"] = item[6]
-        item_dict["season"] = item[7]
-        item_dict["city"] = item[8]
-        item_dict["sport"] = item[9]
-        item_dict["event"] = item[10]
-        item_dict["medal"] = item[11]
-        all_results.append(item_dict)
-
-    return jsonify(all_results)
 
 
 if __name__ == '__main__':

@@ -20,22 +20,8 @@
 <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="../static/vendor/icofont/icofont.min.css" rel="stylesheet">
 <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="../static/vendor/venobox/venobox.css" rel="stylesheet">
-<link href="../static/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-<!-- High Charts -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://code.highcharts.com/modules/series-label.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-<!-- Additional files for the Highslide popup effect -->
-<script src="https://www.highcharts.com/samples/static/highslide-full.min.js"></script>
-<script src="https://www.highcharts.com/samples/static/highslide.config.js" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="https://www.highcharts.com/samples/static/highslide.css" />
 
   <!-- Template Main CSS File -->
   <link href="../static/css/gender.css" rel="stylesheet">
@@ -74,7 +60,6 @@
               <li><a href="/sports">Sports</a></li>
             </ul>
           </li>
-          <li class="active"><a href="/athletesdata">Data</a></li>
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
@@ -93,14 +78,60 @@
             <li>Gender</li>
           </ol>
         </div>
-
       </div>
       
     </section><!-- End Breadcrumbs -->
-
- 
-    <div id="container" style="width:100%; height:400px;"></div>
+    <div id="viewSelectWrap" class="col-md-2 mx-auto" style='background: #f2f2f2; text-align: center;'>
+      <h5>Select Season</h5>
+      <label><input id="rdb1" type="radio" name="toggler" value="divID-1" style="cursor:pointer;" checked/>Summer</label>
+      <label><input id="rdb2" type="radio" name="toggler" value="divID-2" style="cursor:pointer;" />Winter</label>
+  </div>
     
+    <div id="container" class="col-md-8 mx-auto" style="width:100%; height:500px;">
+        <div id="divID-1" class="toHide" style="position:relative;margin-bottom:-400px;"></div>
+        <div id="divID-2" class="toHide" style="position:relative;top:-9999em;opacity:0;"></div>
+    </div>
+ 
+    <!-- <div id="container" class="col-md-8 mx-auto" style="width:100%; height:500px;">
+    </div> -->
+
+    <!-- ======= Project Analysis Section ======= -->
+    <section id="summary" class="summary">
+      <div class="container">
+        <div class="section-title">       
+          <h5 style="color: darkblue"><u>Summer Olympics</u></h5>
+          <p>
+            Women competed in the Olympics for the first time in the Summer Games of 
+            1900 with a total of 23 female competing across 5 different sports: Croquet,
+            Equestrianism, Golf, Sailing and Tennis. That year they brought home 13 medals: 4 Gold,
+            4 Silver and 5 Bronze.
+          </p><br />
+          <p>
+            That first year, women made up less than 2% of all athletes, but over time their numbers
+            have steadily increased and by 2016, they made up around 45% of total competitors and 
+            participated in 34 different sports.
+          </p><br />
+          <p>
+            The number of male athletes competing has also increased steadily from only 176 in 
+            1896 to 6129 in 2016 across 32 different sports.
+          </p><br />
+          <h5 style="color: darkblue"><u>Winter Olympics</u></h5>
+          <p>
+            In the Winter Olympics in 1924, only 13 women participated (4%), all of which competed
+            in Figure Skating (both Mixed Pairs and Women's Singles). As with the Summer Olympics, their
+            numbers steadily increased and by 2014 they made up 40% of all participants across 14 different sports.
+          </p><br />
+          <p>
+            The number of male athletes competing has similarly increased over the years and by
+            2014 their participation grew from 300 men competing across 10 sports to 1643 men 
+            competing across 15 different sports.
+          </p>
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Project Analysis Section -->
 
   </main><!-- End #main -->
 
@@ -110,8 +141,9 @@
     <div class="container d-md-flex py-4">
 
   <div class="mr-md-auto text-center text-md-left">
-    <div class="copyright">
-      Charts and Analysis by the Lofty Flying Llamas<br/>
+    <div clsass="copyright">
+      Charts and Analysis: The Lofty Flying Llamas<br/>
+      Data Source: <a href="https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results/home">120 Years of Olympic History</a><br />
       &copy; Copyright <strong><span>Lumia</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
@@ -141,10 +173,14 @@
   <script src="../static/vendor/php-email-form/validate.js"></script>
   <script src="../static/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="../static/vendor/counterup/counterup.min.js"></script>
-  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../static/vendor/venobox/venobox.min.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+  <!-- High Charts -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
   <!-- Template Main JS File -->
   <!-- <script src="../static/js/main.js"></script> -->

@@ -1,65 +1,74 @@
-let data = d3.json("api/sports").then((data) => {
+let sportsData = d3.json("api/sports").then((data) => {
        console.log(data);
 
     series = [{
         name: 'Summer',
-        data: []
+        data: [],
+        color: '#FF0000'
     },{
         name: 'Winter',
-        data: []
+        data: [],
+        color: '#000080'
     }];
-    });
 
 data.forEach(point => {
-        series.forEach(series => {
-          if (series.name === point.season) {
+    series.forEach(series => {
+        if (series.name === point.season) {
             series.data.push({
-              x: new year(point.year),//getTime(),
+              x: point.year,
               y: point.sport
             })
-          }
-        });
-      });
+        }
+    });
+});
 
 Highcharts.chart('sports-container', {
     chart: {
-        height: 800,
-        width: 700,
+        height: 1000,
+        width: 1500,
         type: 'bar'
     },
     title: {
-        text: '120 Years of Olympic Sports',
+        text: 'Number of Olympic Sports',
         style: {
             fontSize: '20px'
         }
     },
     xAxis: {
-        // categories: [1896, 1900, 1904, 1906, 1908, 1912, 1920, 1924, 1928, 1932, 1936, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016],
-        categories: [series],
+        type: 'category',
+        tickInterval: 2,
+        showFirstLabel: true,
+        startOnTick: false,  
         title: {
-            text: 'Years',
+            text: 'Year',
             style: {
                 fontSize: '26px'
-            }
+                }
         },
+        reversed: false,
         labels: {
+            step: 2,
+            allowOverlap: true,
             style: {
-                fontSize: '20px'
+                fontSize: '16px'
             }
         }
     },
-
     yAxis: {
         min: 0,
+        max: 40,
         title: {
-            text: 'Sport Count',
+            text: 'Number of Sports',
             align: 'middle',
             style: {
                 fontSize: '26px'
             }
         },
         labels: {
-            overflow: 'justify'
+            overflow: 'justify',
+            style: {
+                fontSize: '16px'
+            }
         }
     },
     tooltip: {
@@ -90,18 +99,8 @@ Highcharts.chart('sports-container', {
     credits: {
         enabled: false
     },
-    series: [{
-        name: 'Summer',
-        // data: [9, 20, 18, 13, 24, 17, 25, 20, 17, 18, 24, 20, 19, 19, 19, 21, 20, 23, 23, 23, 25, 27, 29, 31, 34, 34, 34, 32, 34],
-        data: [series],
-        color: '#FF0000'
-    }, {
-        name: 'Winter',
-        // data: [0, 0, 0, 0, 0, 0, 0, 10, 8, 7, 8, 9, 8, 8, 8, 10, 10, 10, 10, 10, 10, 10, 12, 12, 14, 15, 15, 15, 15],
-        data: [series],
-        color: '#000080'
-    }
-    ]
-});
-//   });
-  
+    series: series
+
+    }); //these close highcharts line 23
+
+}); //these close line 1

@@ -26,10 +26,10 @@
  <!-- Template Main CSS File -->
  <link href="../static/css/style.css" rel="stylesheet">
 
-  <!-- highcharts bar comparison -->
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
 
 
 
@@ -60,12 +60,11 @@
           <li class="active"><a href='/#visuals'>Visuals</a></li>
           <li class="drop-down"><a href="">Comparison</a>
             <ul>
-              <li><a href="/gender">Gender</a></li>
-              <li><a href="/medals">Medals</a></li>
-              <li><a href="/sports">Sports</a></li>
+              <li><a href="gender">Gender</a></li>
+              <li><a href="medals">Medals</a></li>
+              <li><a href="sports">Sports</a></li>
             </ul>
           </li>
-          <li class="active"><a href="/athletesdata">Data</a></li>
       </nav><!-- .nav-menu -->
   </header><!-- End Header -->
 
@@ -89,7 +88,7 @@
     <section id = "inner" class="inner-page">
       <div class="container">
         <p>
-          <script src="../static/js/maplogic.js"></script>
+
         </p>
       </div>
     </section>
@@ -97,16 +96,50 @@
     <section id = "map" class="map">
       <div id="mapcontainer" style="width:100%; height:400px;">
       
-        <script src="../static/js/maplogic.js"></script>
+
       </div>
     </section>
       <!-- End map -->
+      <!-- ======= Project Analysis Section ======= -->
+    <section id="summary" class="summary">
+      <div class="container">
+        <div class="section-title">
+          <h5><u>Olympic Medal Count by Country</u></h5>
+          <p>
+            Many other Olympic medal counts in the media (e.g., ESPN, Wikipedia) only count team sport 
+            wins as a single medal for the country. Our dataset, however, 
+            counts the total number of medals brought home by all participants, which skew in 
+            favor of countries that often win team sports. 
+          </p><br />
+          <p>
+            When a team wins an Olympic team event, all team members win a medal 
+            for their country including reserve and alternate team members. 
+           For example, in 2016 the U.S. brought home 121 medals for the country. 
+           However, if you count every medal that was brought home by individual athletes in 2016, the U.S. 
+           collected a total of 264 medals.
+          </p><br />
+          <p>
+            The top five countries in total medals (counting all team members’ medals) 
+            for the last four Summer Olympics shows that the U.S. consistently brings home 
+            significantly more medals than the second place team:
+            (40% more medals than Australia in 2004, 42% more medals than China in 2008, 
+            43% more medals than Russia in 2012, and 39% more medals than Germany in 2016).
+          </p>
+          <br />
+          <p>
+            However, the top five countries in total medals (counting team wins as a single medal) 
+            for the last four Summer Olympics shows a different picture. The U.S. still topped the medal count every Summer Olympics,
+            however, the margin is much smaller and the 2nd-place country changes to a country with more individual medalists:
+            (37% more medals than China in 2004, 10% more medals than China in 2008, 
+            12% more medals than China in 2012, and 44% more medals than Great Britain in 2016).
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- End Project Analysis Section -->
       <!-- medalbar Buttons and Column Compare from highchart -->
     <section id = "buttons" class ="chart" class='buttons'>
     <div id = "buttoncontainer">
-      <button id='2000'>
-        2000
-      </button>
       <button id='2004'>
         2004
       </button>
@@ -123,15 +156,12 @@
       </section>
     <section id = "medalbar" class = "medalbar" style = "width:100%; height:800px;">
    <div>
-      <script src="../static/js/medalbar.js"></script>
+      
       </div>
       </section>
 
     
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
 
     <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -139,8 +169,9 @@
     <div class="container d-md-flex py-4">
 
   <div class="mr-md-auto text-center text-md-left">
-    <div class="copyright">
-      Charts and Analysis by the Lofty Flying Llamas<br/>
+    <div clsass="copyright">
+      Charts and Analysis: The Lofty Flying Llamas<br/>
+      Data Source: <a href="https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results/home">120 Years of Olympic History</a><br />
       &copy; Copyright <strong><span>Lumia</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
@@ -171,31 +202,29 @@
   <script src="../static/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="../static/vendor/counterup/counterup.min.js"></script>
   <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../static/vendor/venobox/venobox.min.js"></script>
-  <script src="../static/vendor/owl.carousel/owl.carousel.min.js"></script>
 
 
-<!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-    crossorigin=""/>
+  <!-- highcharts bar comparison -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
-    <!-- d3 JavaScript -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
 
-    <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <!-- d3 JavaScript -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
-    <!-- API key -->
-    <script type="text/javascript" src="../static/js/config.js"></script>
-      <!-- JS  -->
-    <script type="text/javascript" src="../static/js/maplogic.js"></script>
-      <!-- Template Main JS File -->
-  <script src="../static/js/main.js"></script>
+  <!-- API key -->
+  <script type="text/javascript" src="../static/js/config.js"></script>
+      
+  <!-- JS  -->
+  <script type="text/javascript" src="../static/js/maplogic.js"></script>
+  
+  <!-- Template Main JS File -->
+  <script src="../static/js/medalbar.js"></script>
 </body>
 
 </html>

@@ -33,8 +33,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
+  # Back to top button
+  --------------------------------------------------------------*/
 
 .back-to-top {
   position: fixed;
@@ -63,8 +63,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
+  # Header
+  --------------------------------------------------------------*/
 
 #header {
   height: 70px;
@@ -95,8 +95,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Header Social Links
---------------------------------------------------------------*/
+  # Header Social Links
+  --------------------------------------------------------------*/
 
 .header-social-links a {
   color: #9ba6af;
@@ -120,8 +120,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
+  # Navigation Menu
+  --------------------------------------------------------------*/
 
 /* Desktop Navigation */
 
@@ -346,8 +346,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
+  # Hero Section
+  --------------------------------------------------------------*/
 
 #hero {
   width: 100%;
@@ -428,8 +428,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Sections General
---------------------------------------------------------------*/
+  # Sections General
+  --------------------------------------------------------------*/
 
 section {
   padding: 60px 0;
@@ -479,8 +479,8 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
+  # Breadcrumbs
+  --------------------------------------------------------------*/
 
 .breadcrumbs {
   padding: 40px 0;
@@ -525,8 +525,8 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
+  # Footer
+  --------------------------------------------------------------*/
 
 #footer {
   color: #444444;
@@ -682,13 +682,13 @@ section {
 }
 
 /*--------------------------------------------------------------
-# HighChart Gender Over Time
---------------------------------------------------------------*/
+  # HighChart Gender Over Time
+  --------------------------------------------------------------*/
 
 .highcharts-figure,
 .highcharts-data-table table {
   min-width: 360px;
-  max-width: 800px;
+  max-width: 1500px;
   margin: 0 auto;
   box-align: "center";
 }
@@ -722,44 +722,4 @@ section {
 }
 .highcharts-data-table tr:hover {
   background: #f1f7ff;
-}
-
-.buttons {
-  min-width: 310px;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 0;
-}
-
-.buttons button {
-  cursor: pointer;
-  border: 1px solid silver;
-  border-right-width: 0;
-  background-color: #f8f8f8;
-  font-size: 1rem;
-  padding: 0.5rem;
-  outline: none;
-  transition-duration: 0.3s;
-}
-
-.buttons button:first-child {
-  border-top-left-radius: 0.3em;
-  border-bottom-left-radius: 0.3em;
-}
-
-.buttons button:last-child {
-  border-top-right-radius: 0.3em;
-  border-bottom-right-radius: 0.3em;
-  border-right-width: 1px;
-}
-
-.buttons button:hover {
-  color: white;
-  background-color: rgb(158, 159, 163);
-  outline: none;
-}
-
-.buttons button.active {
-  background-color: #0051b4;
-  color: white;
 }
