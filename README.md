@@ -104,14 +104,14 @@ the last 120 years.
 
 **Is there a difference in the gender make up of Olympic athletes over time?**
 
-<u>Summer Olympics</u><br />
+<u>Summer Olympics:</u><br />
 Women competed in the Olympics for the first time in the Summer Games of 1900 with a total of 23 athletes competing across 5 different sports: Croquet, Equestrianism, Golf, Sailing and Tennis. That year they brought home 13 medals: 4 Gold, 4 Silver and 5 Bronze.
 
 That first year, they made up less than 2% of all athletes, but over time their numbers have steadily increased and by 2016, they made up about 45% of total competitors and participated in 34 different sports.
 
 The number of male athletes competing has also increased steadily from only 176 in 1896 to 6129 in 2016 across 32 different sports.
 
-<u>Winter Olympics</u><br />
+<u>Winter Olympics:</u><br />
 In the Winter Olympics in 1924, only 13 women participated (4%), all of which competed in Figure Skating (both Mixed Pairs and Women's Singles). As with the Summer Olympics, their numbers steadily increased, and by 2014 they made up 40% of all participants across 14 different sports.
 
 The number of male athletes competing has similarly increased over the years and by 2014 their participation grew from 300 men competing across 10 sports to 1643 men competing across 15 different sports.
@@ -121,12 +121,13 @@ The number of male athletes competing has similarly increased over the years and
 **How many medals are actually brought home by each country?**
 
 <u>Counting Medals</u><br />
-
-Many other Olympic medal counts in the media only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home, which skew in favor of countries that often win team sports.
+Many other Olympic medal counts in the media (e.g. ESPN, Wikipedia) only count team sport wins as a single medal for the country. Our dataset, however, counts the total number of medals brought home by each participant, which skews in favor of countries that often win team sports.
 
 When a team wins an Olympic team event, all team members win a medal for their country including reserve and alternate team members as well. An example of this is the 2016 Olympics and the U.S. The U.S. brought home 121 medals for the country, however if you count every medal that was brought home in 2016, the U.S. collected a total of 264 medals.
 
 The top five countries in total medals (counting all team members’ medals) for the last four Summer Olympics show that the U.S. consistently brings home significantly more medals than the second place team (40% more medals than Australia in 2004, 42% more medals than China in 2008, 43% more medals than Russia in 2012, and 39% more medals than Germany in 2016).
+
+However, the top five countries in total medals (counting team wins as a single medal) for the last four Summer Olympics shows a different picture. The U.S. still topped the medal count every Summer Olympics, however, the margin is much smaller and the 2nd-place country changes to a country with more individual medalists: (37% more medals than China in 2004, 10% more medals than China in 2008, 12% more medals than China in 2012, and 44% more medals than Great Britain in 2016).
 
 ### <u>Sports</u>
 
